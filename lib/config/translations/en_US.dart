@@ -80,5 +80,18 @@ const Map<String, String> enUS = {
   'purple_theme': 'Purple Theme',
   'teal_theme': 'Teal Theme',
   'english': 'English',
+
   'french': 'French',
+  // Onboarding
+  'welcome_to_service_booking': 'Welcome to Service Booking',
+  'discover_and_book_services':
+      'Discover and book a wide variety of services near you with ease.',
+  'find_perfect_service': 'Find the Perfect Service',
+  'browse_variety_of_services':
+      'Browse through a vast selection of services, compare prices, and read reviews.',
+  'choose_your_language': 'Choose Your Language',
+  'select_preferred_language':
+      'Select your preferred language to personalize your experience.',
+  'skip': 'Skip',
+  'select_language': 'Select Language',
 };

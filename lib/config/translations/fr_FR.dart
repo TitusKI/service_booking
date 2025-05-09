@@ -15,7 +15,7 @@ const Map<String, String> frFR = {
   'error': 'Erreur',
   'success': 'Succès',
   'no_data': 'Aucune donnée disponible',
-  
+
   // Services List
   'services': 'Services',
   'search_services': 'Rechercher des services...',
@@ -28,7 +28,7 @@ const Map<String, String> frFR = {
   'categories': 'Catégories',
   'price_range': 'Fourchette de Prix',
   'reset_filters': 'Réinitialiser les Filtres',
-  
+
   // Service Details
   'price': 'Prix',
   'duration': 'Durée',
@@ -41,7 +41,7 @@ const Map<String, String> frFR = {
   'booking_successful': 'Réservation réussie!',
   'available': 'Disponible',
   'unavailable': 'Indisponible',
-  
+
   // Add/Edit Service
   'add_new_service': 'Ajouter un Nouveau Service',
   'edit_service': 'Modifier le Service',
@@ -57,11 +57,12 @@ const Map<String, String> frFR = {
   'update_service': 'Mettre à Jour le Service',
   'add_service_button': 'Ajouter le Service',
   'delete_service': 'Supprimer le Service',
-  'delete_confirmation': 'Êtes-vous sûr de vouloir supprimer ce service? Cette action ne peut pas être annulée.',
+  'delete_confirmation':
+      'Êtes-vous sûr de vouloir supprimer ce service? Cette action ne peut pas être annulée.',
   'service_added': 'Service ajouté avec succès',
   'service_updated': 'Service mis à jour avec succès',
   'invalid_image': 'URL d\'image invalide',
-  
+
   // Validation
   'field_required': 'Ce champ est obligatoire',
   'invalid_price': 'Prix invalide',
@@ -69,7 +70,7 @@ const Map<String, String> frFR = {
   'invalid_url': 'Veuillez entrer une URL valide',
   'invalid_rating': 'Évaluation invalide',
   'rating_range': 'L\'évaluation doit être entre 0 et 5',
-  
+
   // Settings
   'settings': 'Paramètres',
   'language': 'Langue',
@@ -80,4 +81,17 @@ const Map<String, String> frFR = {
   'teal_theme': 'Thème Turquoise',
   'english': 'Anglais',
   'french': 'Français',
+
+  // Onboarding
+  'welcome_to_service_booking': 'Bienvenue sur Réservation de Services',
+  'discover_and_book_services':
+      'Découvrez et réservez facilement une grande variété de services près de chez vous.',
+  'find_perfect_service': 'Trouvez le Service Parfait',
+  'browse_variety_of_services':
+      'Parcourez une vaste sélection de services, comparez les prix et lisez les avis.',
+  'choose_your_language': 'Choisissez Votre Langue',
+  'select_preferred_language':
+      'Sélectionnez votre langue préférée pour personnaliser votre expérience.',
+  'skip': 'Passer',
+  'select_language': 'Sélectionner la langue',
 };

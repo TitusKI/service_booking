@@ -16,11 +16,32 @@ class ServicesController extends GetxController {
   final UpdateService _updateService;
   final DeleteService _deleteService;
 
+  // Loading and error states
   RxBool isLoading = true.obs;
+  RxString errorMessage = ''.obs;
+
+  // Services data
+  RxList<ServiceEntity> services = <ServiceEntity>[].obs;
+
+  // Search and filter states
   RxString searchQuery = ''.obs;
   RxString selectedCategory = 'All'.obs;
-  RxList<ServiceEntity> services = <ServiceEntity>[].obs;
-  RxString errorMessage = ''.obs;
+  RxDouble minPriceFilter = 0.0.obs;
+  RxDouble maxPriceFilter = 1000.0.obs;
+  RxBool onlyAvailableFilter = false.obs;
+
+  // Categories list
+  final RxList<String> categories =
+      <String>[
+        'All',
+        'Cleaning',
+        'Repair',
+        'Gardening',
+        'Beauty',
+        'Education',
+        'Automotive',
+        'Other',
+      ].obs;
 
   ServicesController({
     required GetAllServices getAllServices,
@@ -40,6 +61,61 @@ class ServicesController extends GetxController {
     fetchServices();
   }
 
+  // Apply filters method
+  void applyFilters({
+    required double minPrice,
+    required double maxPrice,
+    required bool onlyAvailable,
+  }) {
+    minPriceFilter.value = minPrice;
+    maxPriceFilter.value = maxPrice;
+    onlyAvailableFilter.value = onlyAvailable;
+    update(); // Trigger UI update
+  }
+
+  // Reset all filters
+  void resetFilters() {
+    searchQuery.value = '';
+    selectedCategory.value = 'All';
+    minPriceFilter.value = 0;
+    maxPriceFilter.value = 1000;
+    onlyAvailableFilter.value = false;
+    update();
+  }
+
+  // Computed property for filtered services
+  List<ServiceEntity> get filteredServices {
+    return services.where((service) {
+      // Filter by search query
+      final matchesSearch =
+          service.name.toLowerCase().contains(
+            searchQuery.value.toLowerCase(),
+          ) ||
+          service.category.toLowerCase().contains(
+            searchQuery.value.toLowerCase(),
+          );
+
+      // Filter by category
+      final matchesCategory =
+          selectedCategory.value == 'All' ||
+          service.category == selectedCategory.value;
+
+      // Filter by price
+      final matchesPrice =
+          service.price >= minPriceFilter.value &&
+          service.price <= maxPriceFilter.value;
+
+      // Filter by availability
+      final matchesAvailability =
+          !onlyAvailableFilter.value || service.availability;
+
+      return matchesSearch &&
+          matchesCategory &&
+          matchesPrice &&
+          matchesAvailability;
+    }).toList();
+  }
+
   Future<void> fetchServices() async {
     isLoading.value = true;
     errorMessage.value = '';
@@ -53,7 +129,7 @@ class ServicesController extends GetxController {
 
         Get.snackbar(
           'error'.tr,
-          errorMessage.value,
+          errorMessage.value.tr,
           snackPosition: SnackPosition.BOTTOM,
           backgroundColor: Get.theme.colorScheme.error,
           colorText: Get.theme.colorScheme.onError,
@@ -77,7 +153,7 @@ class ServicesController extends GetxController {
 
         Get.snackbar(
           'error'.tr,
-          errorMessage.value,
+          errorMessage.value.tr,
           snackPosition: SnackPosition.BOTTOM,
           backgroundColor: Get.theme.colorScheme.error,
           colorText: Get.theme.colorScheme.onError,
@@ -110,7 +186,7 @@ class ServicesController extends GetxController {
 
         Get.snackbar(
           'error'.tr,
-          errorMessage.value,
+          errorMessage.value.tr,
           snackPosition: SnackPosition.BOTTOM,
           backgroundColor: Get.theme.colorScheme.error,
           colorText: Get.theme.colorScheme.onError,
@@ -148,7 +224,7 @@ class ServicesController extends GetxController {
 
         Get.snackbar(
           'error'.tr,
-          errorMessage.value,
+          errorMessage.value.tr,
           snackPosition: SnackPosition.BOTTOM,
           backgroundColor: Get.theme.colorScheme.error,
           colorText: Get.theme.colorScheme.onError,
@@ -181,7 +257,7 @@ class ServicesController extends GetxController {
         Get.snackbar(
           animationDuration: const Duration(milliseconds: 500),
           'error'.tr,
-          errorMessage.value,
+          errorMessage.value.tr,
           snackPosition: SnackPosition.BOTTOM,
           backgroundColor: Get.theme.colorScheme.error,
           colorText: Get.theme.colorScheme.onError,
@@ -193,22 +269,6 @@ class ServicesController extends GetxController {
         Get.to(ServiceDetailScreen(service: serviceDetail));
       },
     );
-  }
-
-  List<ServiceEntity> get filteredServices {
-    return services.where((service) {
-      final matchesSearch =
-          service.name.toLowerCase().contains(
-            searchQuery.value.toLowerCase(),
-          ) ||
-          service.category.toLowerCase().contains(
-            searchQuery.value.toLowerCase(),
-          );
-      final matchesCategory =
-          selectedCategory.value == 'All' ||
-          service.category == selectedCategory.value;
-      return matchesSearch && matchesCategory;
-    }).toList();
   }
 
   String _mapFailureToMessage(Failure failure) {
@@ -223,16 +283,4 @@ class ServicesController extends GetxController {
         return 'unexpected_error'.tr;
     }
   }
-
-  final RxList<String> categories =
-      <String>[
-        'All',
-        'Cleaning',
-        'Repair',
-        'Gardening',
-        'Beauty',
-        'Education',
-        'Automotive',
-        'Other',
-      ].obs;
 }

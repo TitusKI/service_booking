@@ -1,16 +1,14 @@
-// lib/presentation/screens/services/add_edit_service_screen.dart
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:uuid/uuid.dart';
 import '../../../core/constants/app_constants.dart';
-import '../../../domain/entities/service_entity.dart'; // Use Entity
+import '../../../domain/entities/service_entity.dart';
 import '../../controllers/services_controller.dart';
 import '../../widgets/custom_button.dart';
-import '../../widgets/custom_textfield.dart'; // Corrected import
+import '../../widgets/custom_textfield.dart';
 
 class AddEditServiceScreen extends StatefulWidget {
-  // Receive ServiceEntity
   final ServiceEntity? service;
 
   const AddEditServiceScreen({super.key, this.service});
@@ -28,10 +26,9 @@ class _AddEditServiceScreenState extends State<AddEditServiceScreen> {
   late final TextEditingController _imageUrlController;
   late final TextEditingController _ratingController;
 
-  String _selectedCategory = 'Cleaning';
+  String _selectedCategory = 'Cleaning'.tr;
   bool _availability = true;
-  // Use controller's loading state instead of local _isLoading
-  // bool _isLoading = false;
+
   bool _isImageValid = true;
 
   final ServicesController _servicesController = Get.find<ServicesController>();
@@ -40,7 +37,6 @@ class _AddEditServiceScreenState extends State<AddEditServiceScreen> {
   void initState() {
     super.initState();
 
-    // Initialize controllers with existing data if editing
     _nameController = TextEditingController(text: widget.service?.name ?? '');
     _priceController = TextEditingController(
       text: widget.service?.price.toString() ?? '',
@@ -56,11 +52,10 @@ class _AddEditServiceScreenState extends State<AddEditServiceScreen> {
     );
 
     if (widget.service != null) {
-      _selectedCategory = widget.service!.category;
+      _selectedCategory = widget.service!.category.tr;
       _availability = widget.service!.availability;
     }
 
-    // Validate image URL when it changes
     _imageUrlController.addListener(_validateImageUrl);
   }
 
@@ -86,7 +81,6 @@ class _AddEditServiceScreenState extends State<AddEditServiceScreen> {
     final url = _imageUrlController.text;
     final parsedUri = Uri.tryParse(url);
     if (parsedUri == null || !parsedUri.isAbsolute) {
-      // More robust URL check
       setState(() {
         _isImageValid = false;
       });
@@ -100,9 +94,7 @@ class _AddEditServiceScreenState extends State<AddEditServiceScreen> {
 
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
-      // Create or update service entity
       final service = ServiceEntity(
-        // Using Uuid to generate a unique ID
         id: widget.service?.id ?? const Uuid().v4(),
         name: _nameController.text,
         category: _selectedCategory,
@@ -150,7 +142,6 @@ class _AddEditServiceScreenState extends State<AddEditServiceScreen> {
             ),
             const SizedBox(height: AppConstants.defaultPadding),
 
-            // Category dropdown
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -180,22 +171,22 @@ class _AddEditServiceScreenState extends State<AddEditServiceScreen> {
                   ),
                   child: DropdownButtonHideUnderline(
                     child: DropdownButton<String>(
-                      value: _selectedCategory,
+                      value: _selectedCategory.tr,
                       isExpanded: true,
                       items:
                           _servicesController.categories
-                              .where((category) => category != 'All')
+                              .where((category) => category.tr != 'All'.tr)
                               .map((category) {
                                 return DropdownMenuItem<String>(
                                   value: category,
-                                  child: Text(category),
+                                  child: Text(category.tr),
                                 );
                               })
                               .toList(),
                       onChanged: (value) {
                         if (value != null) {
                           setState(() {
-                            _selectedCategory = value;
+                            _selectedCategory = value.tr;
                           });
                         }
                       },
@@ -208,12 +199,11 @@ class _AddEditServiceScreenState extends State<AddEditServiceScreen> {
             ),
             const SizedBox(height: AppConstants.defaultPadding),
 
-            // Price and duration
             Row(
               children: [
                 Expanded(
                   child: CustomTextField(
-                    label: 'price_dollar'.tr,
+                    label: "${'price'.tr} (${'currency_symbol'.tr})",
                     hint: '0.00',
                     controller: _priceController,
                     keyboardType: const TextInputType.numberWithOptions(
@@ -260,7 +250,6 @@ class _AddEditServiceScreenState extends State<AddEditServiceScreen> {
             ),
             const SizedBox(height: AppConstants.defaultPadding),
 
-            // Image URL
             CustomTextField(
               label: 'image_url'.tr,
               hint: 'enter_image_url'.tr,
@@ -279,7 +268,6 @@ class _AddEditServiceScreenState extends State<AddEditServiceScreen> {
             ),
             const SizedBox(height: AppConstants.defaultPadding),
 
-            // Image preview
             if (_imageUrlController.text.isNotEmpty)
               AnimatedContainer(
                 duration: AppConstants.defaultAnimationDuration,
@@ -351,7 +339,6 @@ class _AddEditServiceScreenState extends State<AddEditServiceScreen> {
                 ),
               ),
 
-            // Rating
             CustomTextField(
               label: 'rating'.tr,
               hint: '5.0',
@@ -378,7 +365,6 @@ class _AddEditServiceScreenState extends State<AddEditServiceScreen> {
             ),
             const SizedBox(height: AppConstants.defaultPadding),
 
-            // Availability switch
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -429,10 +415,8 @@ class _AddEditServiceScreenState extends State<AddEditServiceScreen> {
             ),
             const SizedBox(height: AppConstants.largePadding),
 
-            // Submit button
             Obx(
               () => CustomButton(
-                // Wrap with Obx to react to loading state
                 text: isEditing ? 'update_service'.tr : 'add_service_button'.tr,
                 onPressed: _submitForm,
                 isLoading: _servicesController.isLoading.value,
@@ -440,47 +424,6 @@ class _AddEditServiceScreenState extends State<AddEditServiceScreen> {
                 icon: isEditing ? Icons.save : Icons.add,
               ),
             ),
-
-            // Delete button
-            if (isEditing) ...[
-              const SizedBox(height: AppConstants.defaultPadding),
-              Obx(
-                () => CustomButton(
-                  text: 'delete_service'.tr,
-                  onPressed: () {
-                    Get.dialog(
-                      AlertDialog(
-                        title: Text('delete_service'.tr),
-                        content: Text('delete_confirmation'.tr),
-                        actions: [
-                          TextButton(
-                            onPressed: () => Get.back(),
-                            child: Text('cancel'.tr),
-                          ),
-                          ElevatedButton(
-                            onPressed: () {
-                              // close dialog and delete service
-                              Get.back();
-                              _servicesController.performDeleteService(
-                                widget.service!.id,
-                              );
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: theme.colorScheme.error,
-                            ),
-                            child: Text('delete'.tr),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                  color: theme.colorScheme.error,
-                  icon: Icons.delete,
-                  type: ButtonType.outlined,
-                ),
-              ),
-            ],
-            const SizedBox(height: AppConstants.largePadding),
           ],
         ),
       ),

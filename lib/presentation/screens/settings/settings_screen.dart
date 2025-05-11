@@ -2,17 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:service_booking/config/themes/app_theme.dart';
 import '../../../core/constants/app_constants.dart';
-import '../../controllers/language_controller.dart';
 import '../../controllers/theme_controller.dart';
+import '../../widgets/build_lang_dropdown.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // final theme = Theme.of(context);
     final themeController = Get.find<ThemeController>();
-    final languageController = Get.find<LanguageController>();
 
     return Scaffold(
       appBar: AppBar(title: Text('settings'.tr)),
@@ -66,26 +64,7 @@ class SettingsScreen extends StatelessWidget {
           _buildSectionHeader(context, 'language'.tr),
           const SizedBox(height: AppConstants.smallPadding),
 
-          Column(
-            children: [
-              _buildLanguageOption(
-                context,
-                title: 'english'.tr,
-                languageCode: 'en',
-                countryCode: 'US',
-                isSelected: languageController.isCurrentLanguage('en', 'US'),
-                onTap: () => languageController.changeLanguage('en', 'US'),
-              ),
-              _buildLanguageOption(
-                context,
-                title: 'french'.tr,
-                languageCode: 'fr',
-                countryCode: 'FR',
-                isSelected: languageController.isCurrentLanguage('fr', 'FR'),
-                onTap: () => languageController.changeLanguage('fr', 'FR'),
-              ),
-            ],
-          ),
+          buildLanguageDropdown(context),
         ],
       ),
     );
@@ -116,44 +95,6 @@ class SettingsScreen extends StatelessWidget {
 
     return ListTile(
       leading: Icon(icon, color: color ?? theme.colorScheme.primary),
-      title: Text(title, style: theme.textTheme.bodyLarge),
-      trailing:
-          isSelected
-              ? Icon(Icons.check_circle, color: theme.colorScheme.primary)
-              : null,
-      onTap: onTap,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(AppConstants.smallRadius),
-      ),
-      tileColor:
-          isSelected
-              ? theme.colorScheme.primaryContainer.withOpacity(0.3)
-              : null,
-      contentPadding: const EdgeInsets.symmetric(
-        horizontal: AppConstants.defaultPadding,
-        vertical: 4,
-      ),
-    );
-  }
-
-  Widget _buildLanguageOption(
-    BuildContext context, {
-    required String title,
-    required String languageCode,
-    required String countryCode,
-    required bool isSelected,
-    required VoidCallback onTap,
-  }) {
-    final theme = Theme.of(context);
-
-    return ListTile(
-      leading: Text(
-        languageCode.toUpperCase(),
-        style: theme.textTheme.titleLarge?.copyWith(
-          fontWeight: FontWeight.bold,
-          color: theme.colorScheme.primary,
-        ),
-      ),
       title: Text(title, style: theme.textTheme.bodyLarge),
       trailing:
           isSelected

@@ -21,51 +21,19 @@ class AppThemes {
   }
 
   static ThemeData _getPurpleTheme() {
-    return ThemeData(
-      useMaterial3: true,
+    return LightTheme.themeData.copyWith(
       colorScheme: ColorScheme.fromSeed(
         seedColor: Colors.purple,
         brightness: Brightness.light,
-      ),
-      fontFamily: 'Poppins',
-      appBarTheme: const AppBarTheme(centerTitle: true, elevation: 0),
-      cardTheme: CardTheme(
-        elevation: 2,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      ),
-      elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-          elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-          padding: const EdgeInsets.symmetric(vertical: 12),
-        ),
       ),
     );
   }
 
   static ThemeData _getTealTheme() {
-    return ThemeData(
-      useMaterial3: true,
+    return LightTheme.themeData.copyWith(
       colorScheme: ColorScheme.fromSeed(
         seedColor: Colors.teal,
         brightness: Brightness.light,
-      ),
-      fontFamily: 'Poppins',
-      appBarTheme: const AppBarTheme(centerTitle: true, elevation: 0),
-      cardTheme: CardTheme(
-        elevation: 2,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      ),
-      elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-          elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-          padding: const EdgeInsets.symmetric(vertical: 12),
-        ),
       ),
     );
   }

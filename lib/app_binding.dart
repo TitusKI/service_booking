@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:service_booking/config/services/storage_service.dart';
 import 'package:service_booking/data/datasources/service_local_ds.dart';
 import '../data/repositories/service_repository_impl.dart';
 import '../domain/repositories/service_repository.dart';
@@ -17,6 +18,8 @@ import 'data/datasources/service_remote_ds.dart';
 class AppBinding extends Bindings {
   @override
   void dependencies() {
+    // lOCAL Data Sources
+
     // Core Controllers
     Get.put<ThemeController>(ThemeController());
     Get.put<LanguageController>(LanguageController());
@@ -24,8 +27,8 @@ class AppBinding extends Bindings {
     // External Dependencies
     Get.lazyPut<Dio>(() => Dio());
     Get.lazyPut<GetStorage>(() => GetStorage());
+    Get.lazyPut<StorageService>(() => StorageService());
 
-    // Data Sources
     Get.lazyPut<ServiceRemoteDataSource>(
       () => ServiceRemoteDataSourceImpl(dio: Get.find()),
     );

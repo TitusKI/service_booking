@@ -1,4 +1,3 @@
-// lib/data/models/service_model_dto.dart
 import '../../domain/entities/service_entity.dart';
 
 class ServiceModelDto extends ServiceEntity {

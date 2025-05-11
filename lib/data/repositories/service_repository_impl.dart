@@ -30,16 +30,10 @@ class ServiceRepositoryImpl implements ServiceRepository {
         final localServices = await localDataSource.getLastServices();
         return Right(localServices);
       } on CacheException {
-        return Left(
-          ServerFailure(
-            message: 'Failed to fetch services and no cache available.',
-          ),
-        );
+        return Left(ServerFailure(message: 'check_internet_connection'));
       }
     } on CacheException {
-      return Left(
-        CacheFailure(message: 'Error during initial data fetching or caching.'),
-      );
+      return Left(CacheFailure(message: 'check_internet_connection'));
     } catch (e) {
       return Left(
         ServerFailure(message: 'An unexpected error occurred during fetch.'),
@@ -53,7 +47,7 @@ class ServiceRepositoryImpl implements ServiceRepository {
       final remoteService = await remoteDataSource.getServiceDetail(id);
       return Right(remoteService);
     } on ServerException {
-      return Left(ServerFailure(message: 'Failed to get service detail'));
+      return Left(ServerFailure(message: 'check_internet_connection'));
     } on CacheException {
       return Left(CacheFailure());
     } catch (e) {
@@ -74,7 +68,7 @@ class ServiceRepositoryImpl implements ServiceRepository {
       final newService = await remoteDataSource.addService(serviceDto);
       return Right(newService);
     } on ServerException {
-      return Left(ServerFailure(message: 'Failed to add service'));
+      return Left(ServerFailure(message: 'check_internet_connection'));
     } catch (e) {
       return Left(
         ServerFailure(message: 'An unexpected error occurred while adding'),
@@ -91,7 +85,7 @@ class ServiceRepositoryImpl implements ServiceRepository {
       final updatedService = await remoteDataSource.updateService(serviceDto);
       return Right(updatedService);
     } on ServerException {
-      return Left(ServerFailure(message: 'Failed to update service'));
+      return Left(ServerFailure(message: 'check_internet_connection'));
     } on CacheException {
       return Left(CacheFailure());
     } catch (e) {
@@ -107,7 +101,7 @@ class ServiceRepositoryImpl implements ServiceRepository {
       await remoteDataSource.deleteService(id);
       return const Right(null);
     } on ServerException {
-      return Left(ServerFailure(message: 'Failed to delete service'));
+      return Left(ServerFailure(message: 'check_internet_connection'));
     } catch (e) {
       return Left(
         ServerFailure(message: 'An unexpected error occurred while deleting'),

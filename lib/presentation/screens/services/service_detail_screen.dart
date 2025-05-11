@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../core/constants/app_constants.dart';
@@ -32,11 +33,17 @@ class ServiceDetailScreen extends StatelessWidget {
                 child: Stack(
                   fit: StackFit.expand,
                   children: [
-                    Image.network(
-                      service.imageUrl,
+                    CachedNetworkImage(
+                      imageUrl: service.imageUrl,
                       fit: BoxFit.cover,
-                      errorBuilder:
-                          (context, error, stackTrace) => Container(
+                      placeholder:
+                          (context, url) => Center(
+                            child: CircularProgressIndicator(
+                              color: theme.colorScheme.primary,
+                            ),
+                          ),
+                      errorWidget:
+                          (context, url, error) => Container(
                             color: theme.colorScheme.surfaceContainerHighest,
                             child: Icon(
                               Icons.image_not_supported,

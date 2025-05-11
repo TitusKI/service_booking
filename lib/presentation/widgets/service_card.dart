@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:service_booking/domain/entities/service_entity.dart';
@@ -52,11 +53,20 @@ class ServiceCard extends StatelessWidget {
                     tag: 'service-image-${service.id}',
                     child: AspectRatio(
                       aspectRatio: 16 / 9,
-                      child: Image.network(
-                        service.imageUrl,
+                      child: CachedNetworkImage(
+                        imageUrl: service.imageUrl,
                         fit: BoxFit.cover,
-                        errorBuilder:
-                            (context, error, stackTrace) => Container(
+                        placeholder:
+                            (context, url) => Container(
+                              color: theme.colorScheme.surfaceContainerHighest,
+                              child: Center(
+                                child: CircularProgressIndicator(
+                                  color: theme.colorScheme.primary,
+                                ),
+                              ),
+                            ),
+                        errorWidget:
+                            (context, url, error) => Container(
                               color: theme.colorScheme.surfaceContainerHighest,
                               child: Icon(
                                 Icons.image_not_supported,
@@ -64,23 +74,6 @@ class ServiceCard extends StatelessWidget {
                                 color: theme.colorScheme.onSurfaceVariant,
                               ),
                             ),
-                        loadingBuilder: (context, child, loadingProgress) {
-                          if (loadingProgress == null) return child;
-                          return Container(
-                            color: theme.colorScheme.surfaceContainerHighest,
-                            child: Center(
-                              child: CircularProgressIndicator(
-                                value:
-                                    loadingProgress.expectedTotalBytes != null
-                                        ? loadingProgress
-                                                .cumulativeBytesLoaded /
-                                            loadingProgress.expectedTotalBytes!
-                                        : null,
-                                color: theme.colorScheme.primary,
-                              ),
-                            ),
-                          );
-                        },
                       ),
                     ),
                   ),

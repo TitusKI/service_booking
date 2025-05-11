@@ -118,7 +118,7 @@ class ServiceDetailScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Text(
-                          service.category,
+                          service.category.tr,
                           style: theme.textTheme.bodySmall?.copyWith(
                             color: theme.colorScheme.primary,
                             fontWeight: FontWeight.bold,
@@ -188,7 +188,8 @@ class ServiceDetailScreen extends StatelessWidget {
                         context,
                         icon: Icons.attach_money,
                         title: 'price'.tr,
-                        value: '\$${service.price.toStringAsFixed(2)}',
+                        value:
+                            '${"currency_symbol".tr} ${service.price.toStringAsFixed(2)}',
                         color: Colors.green,
                       ),
                       const SizedBox(width: AppConstants.defaultPadding),
@@ -207,7 +208,7 @@ class ServiceDetailScreen extends StatelessWidget {
                   Text('description'.tr, style: theme.textTheme.titleLarge),
                   const SizedBox(height: AppConstants.smallPadding),
                   Text(
-                    'This is a detailed description of the ${service.name} service. It includes information about what the service entails, what customers can expect, and any special requirements or considerations.',
+                    'generic_service_description_body_short'.tr,
                     style: theme.textTheme.bodyMedium?.copyWith(height: 1.5),
                   ),
 
@@ -217,18 +218,22 @@ class ServiceDetailScreen extends StatelessWidget {
                   const SizedBox(height: AppConstants.smallPadding),
                   _buildIncludedItem(
                     context,
-                    'Professional service by experienced staff',
+                    'professional_service_included'.tr,
                     true,
                   ),
                   _buildIncludedItem(
                     context,
-                    'Quality equipment and materials',
+                    'quality_equipment_included'.tr,
                     true,
                   ),
-                  _buildIncludedItem(context, 'Satisfaction guarantee', true),
                   _buildIncludedItem(
                     context,
-                    'Free follow-up consultation',
+                    'satisfaction_guarantee_included'.tr,
+                    true,
+                  ),
+                  _buildIncludedItem(
+                    context,
+                    'free_follow_up_included'.tr,
                     service.price > 50,
                   ),
 
@@ -264,7 +269,7 @@ class ServiceDetailScreen extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  '\$${service.price.toStringAsFixed(2)}',
+                  '${"currency_symbol".tr} ${service.price.toStringAsFixed(2)}',
                   style: theme.textTheme.titleLarge?.copyWith(
                     color: theme.colorScheme.primary,
                     fontWeight: FontWeight.bold,
@@ -305,7 +310,12 @@ class ServiceDetailScreen extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                             backgroundColor: theme.colorScheme.primary,
                           ),
-                          child: Text('confirm'.tr),
+                          child: Text(
+                            'confirm'.tr,
+                            style: theme.textTheme.bodySmall!.copyWith(
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
                       ],
                     ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:service_booking/presentation/widgets/filter_bottom_sheet.dart';
+import 'package:service_booking/presentation/widgets/main_drawer.dart';
 import '../../../core/constants/app_constants.dart';
 import '../../controllers/services_controller.dart';
 import '../../widgets/service_card.dart';
@@ -18,15 +20,15 @@ class ServicesListScreen extends StatefulWidget {
 }
 
 class _ServicesListScreenState extends State<ServicesListScreen> {
-  // Using Getx for state management
-  // creating an instance of ServicesController
   final ServicesController controller = Get.find<ServicesController>();
-
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: const MainDrawer(),
       body: NestedScrollView(
         headerSliverBuilder:
             (context, innerBoxIsScrolled) => [
@@ -36,39 +38,50 @@ class _ServicesListScreenState extends State<ServicesListScreen> {
                 snap: true,
                 actions: [
                   IconButton(
-                    icon: const Icon(Icons.settings_outlined),
-                    onPressed: () => Get.to(() => const SettingsScreen()),
-                    tooltip: 'settings'.tr,
+                    icon: const Icon(Icons.add_circle_outline_outlined),
+                    onPressed: () => Get.to(() => const AddEditServiceScreen()),
+                    tooltip: 'add_service'.tr,
                   ),
                 ],
               ),
             ],
         body: Column(
           children: [
-            // Search bar
             Padding(
               padding: const EdgeInsets.all(AppConstants.defaultPadding),
-              child: TextField(
-                onChanged: (value) => controller.searchQuery.value = value,
-                decoration: InputDecoration(
-                  hintText: 'search_services'.tr,
-                  prefixIcon: const Icon(Icons.search),
-                  suffixIcon: Obx(
-                    () =>
-                        controller.searchQuery.value.isNotEmpty
-                            ? IconButton(
-                              icon: const Icon(Icons.clear),
-                              onPressed:
-                                  () => controller.searchQuery.value = '',
-                            )
-                            : const SizedBox.shrink(),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      onChanged:
+                          (value) => controller.searchQuery.value = value,
+                      decoration: InputDecoration(
+                        hintText: 'search_services'.tr,
+                        prefixIcon: const Icon(Icons.search),
+                        suffixIcon: Obx(
+                          () =>
+                              controller.searchQuery.value.isNotEmpty
+                                  ? IconButton(
+                                    icon: const Icon(Icons.clear),
+                                    onPressed:
+                                        () => controller.searchQuery.value = '',
+                                  )
+                                  : const SizedBox.shrink(),
+                        ),
+                        contentPadding: const EdgeInsets.symmetric(vertical: 0),
+                      ),
+                    ),
                   ),
-                  contentPadding: const EdgeInsets.symmetric(vertical: 0),
-                ),
+                  const SizedBox(width: 8),
+                  IconButton(
+                    icon: const Icon(Icons.filter_list),
+                    onPressed:
+                        () => FilterBottomSheet.show(context, controller),
+                    tooltip: 'filter'.tr,
+                  ),
+                ],
               ),
             ),
-
-            // Categories
             SizedBox(
               height: 50,
               child: Obx(
@@ -85,7 +98,7 @@ class _ServicesListScreenState extends State<ServicesListScreen> {
                     return Padding(
                       padding: const EdgeInsets.only(right: 8),
                       child: ChoiceChip(
-                        label: Text(category),
+                        label: Text(category.tr),
                         selected: isSelected,
                         onSelected: (selected) {
                           if (selected) {
@@ -112,7 +125,6 @@ class _ServicesListScreenState extends State<ServicesListScreen> {
               ),
             ),
 
-            // Services list
             Expanded(
               child: Obx(() {
                 if (controller.isLoading.value) {
@@ -122,11 +134,10 @@ class _ServicesListScreenState extends State<ServicesListScreen> {
                 final services = controller.filteredServices;
 
                 if (services.isEmpty) {
-                  // Check for both no internet
                   if (controller.errorMessage.isNotEmpty) {
                     return EmptyState(
                       title: 'error'.tr,
-                      message: controller.errorMessage.value,
+                      message: controller.errorMessage.value.tr,
                       icon: Icons.error_outline,
                       actionText: 'retry'.tr,
                       onActionPressed: () => controller.fetchServices(),
@@ -153,7 +164,6 @@ class _ServicesListScreenState extends State<ServicesListScreen> {
                   );
                 }
 
-                // Display services list
                 return RefreshIndicator(
                   onRefresh: () => controller.fetchServices(),
                   child: AnimationLimiter(
@@ -180,7 +190,7 @@ class _ServicesListScreenState extends State<ServicesListScreen> {
                                       transition:
                                           Transition.rightToLeftWithFade,
                                     ),
-                                // calling of delete controller in getx controller
+
                                 onDelete:
                                     () => controller.performDeleteService(
                                       service.id,

@@ -116,7 +116,7 @@ class ServiceCard extends StatelessWidget {
                         ),
                       ),
                       child: Text(
-                        service.category,
+                        service.category.tr,
                         style: theme.textTheme.bodySmall?.copyWith(
                           color: theme.colorScheme.onPrimary,
                           fontWeight: FontWeight.bold,
@@ -204,7 +204,11 @@ class ServiceCard extends StatelessWidget {
                                         backgroundColor:
                                             theme.colorScheme.error,
                                       ),
-                                      child: Text('delete'.tr),
+                                      child: Text(
+                                        'delete'.tr,
+                                        style: theme.textTheme.bodySmall!
+                                            .copyWith(color: Colors.white),
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -262,7 +266,7 @@ class ServiceCard extends StatelessWidget {
                         ),
                         const SizedBox(width: AppConstants.smallPadding),
                         Text(
-                          '\$${service.price.toStringAsFixed(2)}',
+                          '${"currency_symbol".tr} ${service.price.toStringAsFixed(2)}',
                           style: theme.textTheme.titleMedium?.copyWith(
                             color: theme.colorScheme.primary,
                             fontWeight: FontWeight.bold,

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import '../../data/model/language_model.dart';
+import '../../config/translations/language_list.dart';
 
 class LanguageController extends GetxController {
   static LanguageController get to => Get.find();
@@ -8,26 +10,74 @@ class LanguageController extends GetxController {
   final _box = GetStorage();
   final _key = 'languageCode';
 
+  List<LanguageDataModel> get availableLanguages => languageList;
+
   Locale? get locale {
-    final code = _box.read(_key);
-    if (code == null) return Get.deviceLocale;
-    return Locale(code.split('_')[0], code.split('_')[1]);
+    final fullCode = _box.read<String?>(_key);
+    if (fullCode == null) {
+      final deviceLocale = Get.deviceLocale;
+      if (deviceLocale != null && deviceLocale.countryCode != null) {
+        return Locale(deviceLocale.languageCode, deviceLocale.countryCode!);
+      }
+      return Get.deviceLocale;
+    }
+
+    final parts = fullCode.split('_');
+    if (parts.length == 2) {
+      return Locale(parts[0], parts[1]);
+    } else if (parts.length == 1) {
+      return Locale(parts[0]);
+    }
+
+    final deviceLocale = Get.deviceLocale;
+    if (deviceLocale != null && deviceLocale.countryCode != null) {
+      return Locale(deviceLocale.languageCode, deviceLocale.countryCode!);
+    }
+    return const Locale('en', 'US');
   }
 
-  void saveLanguage(String languageCode, String countryCode) {
-    _box.write(_key, '${languageCode}_$countryCode');
+  void saveLanguage(String fullLanguageCode) {
+    _box.write(_key, fullLanguageCode);
   }
 
-  void changeLanguage(String languageCode, String countryCode) {
-    final locale = Locale(languageCode, countryCode);
-    Get.updateLocale(locale);
-    saveLanguage(languageCode, countryCode);
+  void changeLanguage(String fullLanguageCode) {
+    final parts = fullLanguageCode.split('_');
+    if (parts.length == 2) {
+      final locale = Locale(parts[0], parts[1]);
+      Get.updateLocale(locale);
+      saveLanguage(fullLanguageCode);
+    } else if (parts.length == 1) {
+      final locale = Locale(parts[0]);
+      Get.updateLocale(locale);
+      saveLanguage(fullLanguageCode);
+    } else {
+      print(
+        'Invalid fullLanguageCode format for changeLanguage: $fullLanguageCode',
+      );
+    }
   }
 
-  bool isCurrentLanguage(String languageCode, String countryCode) {
+  bool isCurrentLanguage(String fullLanguageCode) {
     final current = locale;
     if (current == null) return false;
-    return current.languageCode == languageCode &&
-        current.countryCode == countryCode;
+
+    final parts = fullLanguageCode.split('_');
+    if (parts.length == 2) {
+      return current.languageCode == parts[0] &&
+          current.countryCode == parts[1];
+    } else if (parts.length == 1) {
+      return current.languageCode == parts[0] && current.countryCode == null;
+    }
+    return false;
+  }
+
+  String? getCurrentLocaleFullCode() {
+    final current = locale;
+    if (current == null) return null;
+
+    if (current.countryCode != null) {
+      return '${current.languageCode}_${current.countryCode}';
+    }
+    return current.languageCode;
   }
 }

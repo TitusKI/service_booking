@@ -1,138 +1,156 @@
-// lib/config/translations/nl_NL.dart
 const Map<String, String> nlNL = {
-  // Common
-  'app_name': 'Service Boeken', // Service Booking
-  'cancel': 'Annuleren', // Cancel
-  'save': 'Opslaan', // Save
-  'delete': 'Verwijderen', // Delete
-  'edit': 'Bewerken', // Edit
-  'add': 'Toevoegen', // Add
-  'search': 'Zoeken', // Search
-  'filter': 'Filteren', // Filter
-  'apply': 'Toepassen', // Apply
-  'reset': 'Resetten', // Reset
-  'confirm': 'Bevestigen', // Confirm
-  'loading': 'Laden...', // Loading...
-  'error': 'Fout', // Error
-  'success': 'Succes', // Success
-  'no_data': 'Geen gegevens beschikbaar', // No data available
-  'retry': 'Opnieuw proberen', // Retry
-  // Services List
-  'services': 'Diensten', // Services
-  'search_services': 'Diensten zoeken...', // Search services...
-  'no_services_found': 'Geen diensten gevonden', // No services found
-  'try_adjusting_search':
-      'Probeer je zoekopdracht of filters aan te passen', // Try adjusting your search or filters
-  'add_service': 'Dienst toevoegen', // Add Service
-  'service_deleted':
-      'Dienst succesvol verwijderd', // Service deleted successfully
-  'all': 'Alles', // All
-  'filter_services': 'Diensten filteren', // Filter Services
-  'categories': 'Categorieën', // Categories
-  'price_range': 'Prijsklasse', // Price Range
-  'reset_filters': 'Filters resetten', // Reset Filters
-  // Service Details
-  'price': 'Prijs', // Price
-  'duration': 'Duur', // Duration
-  'minutes': 'min', // min
-  'description': 'Beschrijving', // Description
-  'whats_included': 'Wat is inbegrepen', // What\'s Included
-  'book_now': 'Nu boeken', // Book Now
-  'booking_confirmation': 'Bevestiging van boeking', // Booking Confirmation
-  'booking_question':
-      'Wilt u deze dienst boeken?', // Would you like to book this service?
-  'booking_successful': 'Boeking succesvol!', // Booking successful!
-  'available': 'Beschikbaar', // Available
-  'unavailable': 'Niet beschikbaar', // Unavailable
-  // Add/Edit Service
-  'add_new_service': 'Nieuwe dienst toevoegen', // Add New Service
-  'edit_service': 'Dienst bewerken', // Edit Service
-  'service_name': 'Naam van de dienst', // Service Name
-  'enter_service_name': 'Voer de naam van de dienst in', // Enter service name
-  'category': 'Categorie', // Category
-  'price_dollar': 'Prijs (\$)', // Price ($)
-  'duration_minutes': 'Duur (minuten)', // Duration (minutes)
-  'image_url': 'Afbeeldings-URL', // Image URL
-  'enter_image_url': 'https://example.com/image.jpg', // Enter image URL
-  'rating': 'Beoordeling (0-5)', // Rating (0-5)
-  'availability': 'Beschikbaarheid', // Availability
-  'update_service': 'Dienst bijwerken', // Update Service
-  'add_service_button': 'Dienst toevoegen', // Add Service button
-  'delete_service': 'Dienst verwijderen', // Delete Service
+  //! Common
+  'app_name': 'Service Boeken',
+  'cancel': 'Annuleren',
+  'save': 'Opslaan',
+  'delete': 'Verwijderen',
+  'edit': 'Bewerken',
+  'add': 'Toevoegen',
+  'search': 'Zoeken',
+  'filter': 'Filteren',
+  'apply': 'Toepassen',
+  'reset': 'Resetten',
+  'confirm': 'Bevestigen',
+  'loading': 'Laden...',
+  'error': 'Fout',
+  'success': 'Succes',
+  'no_data': 'Geen gegevens beschikbaar',
+  'retry': 'Opnieuw proberen',
+  //! Services List
+  'services': 'Diensten',
+  'search_services': 'Diensten zoeken...',
+  'no_services_found': 'Geen diensten gevonden',
+  'try_adjusting_search': 'Probeer je zoekopdracht of filters aan te passen',
+  'add_service': 'Dienst toevoegen',
+  'service_deleted': 'Dienst succesvol verwijderd',
+  'all': 'Alles',
+  'filter_services': 'Diensten filteren',
+  'categories': 'Categorieën',
+  'price_range': 'Prijsklasse',
+  'reset_filters': 'Filters resetten',
+  //! Service Details
+  'price': 'Prijs',
+  'duration': 'Duur',
+  'minutes': 'min',
+  'description': 'Beschrijving',
+  'whats_included': 'Wat is inbegrepen',
+  'book_now': 'Nu boeken',
+  'booking_confirmation': 'Bevestiging van boeking',
+  'booking_question': 'Wilt u deze dienst boeken?',
+  'booking_successful': 'Boeking succesvol!',
+  'available': 'Beschikbaar',
+  'unavailable': 'Niet beschikbaar',
+  //! Add/Edit Service
+  'add_new_service': 'Nieuwe dienst toevoegen',
+  'edit_service': 'Dienst bewerken',
+  'service_name': 'Naam van de dienst',
+  'enter_service_name': 'Voer de naam van de dienst in',
+  'category': 'Categorie',
+  'price_dollar': 'Prijs (\$)',
+  'duration_minutes': 'Duur (minuten)',
+  'image_url': 'Afbeeldings-URL',
+  'enter_image_url': 'https://example.com/image.jpg',
+  'rating': 'Beoordeling (0-5)',
+  'availability': 'Beschikbaarheid',
+  'update_service': 'Dienst bijwerken',
+  'add_service_button': 'Dienst toevoegen',
+  'delete_service': 'Dienst verwijderen',
   'delete_confirmation':
-      'Weet u zeker dat u deze dienst wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.', // Are you sure you want to delete this service? This action cannot be undone.
-  'service_added': 'Dienst succesvol toegevoegd', // Service added successfully
-  'service_updated':
-      'Dienst succesvol bijgewerkt', // Service updated successfully
-  'invalid_image': 'Ongeldige afbeeldings-URL', // Invalid image URL
-  // Validation
-  'field_required': 'Dit veld is verplicht', // This field is required
-  'invalid_price': 'Ongeldige prijs', // Invalid price
-  'invalid_duration': 'Ongeldige duur', // Invalid duration
-  'invalid_url': 'Voer een geldige URL in', // Please enter a valid URL
-  'invalid_rating': 'Ongeldige beoordeling', // Invalid rating
-  'rating_range':
-      'Beoordeling moet tussen 0 en 5 zijn', // Rating must be between 0-5
-  // Settings
-  'settings': 'Instellingen', // Settings
-  'language': 'Taal', // Language
-  'theme': 'Thema', // Theme
-  'dark_mode': 'Donkere modus', // Dark Mode
-  'light_mode': 'Lichte modus', // Light Mode
-  'purple_theme': 'Paars thema', // Purple Theme
-  'teal_theme': 'Blauwgroen thema', // Teal Theme
-  'english': 'Engels', // English
-  'french': 'Frans', // French
-  'amharic': 'Amhaars', // Amharic
-  'arabic': 'Arabisch', // Arabic
-  'spanish': 'Spaans', // Spanish
-  'afrikaans': 'Afrikaans', // Afrikaans
-  'german': 'Duits', // German
-  'indonesian': 'Indonesisch', // Indonesian
-  'portuguese': 'Portugees', // Portuguese
-  'turkish': 'Turks', // Turkish
-  'vietnamese': 'Vietnamees', // Vietnamese
-  'dutch': 'Nederlands', // Dutch (Added for Dutch)
-  // Onboarding
-  'welcome_to_service_booking':
-      'Welkom bij Service Boeken', // Welcome to Service Booking
+      'Weet u zeker dat u deze dienst wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.',
+  'service_added': 'Dienst succesvol toegevoegd',
+  'service_updated': 'Dienst succesvol bijgewerkt',
+  'invalid_image': 'Ongeldige afbeeldings-URL',
+
+  'field_required': 'Dit veld is verplicht',
+  'invalid_price': 'Ongeldige prijs',
+  'invalid_duration': 'Ongeldige duur',
+  'invalid_url': 'Voer een geldige URL in',
+  'invalid_rating': 'Ongeldige beoordeling',
+  'rating_range': 'Beoordeling moet tussen 0 en 5 zijn',
+  //! Settings
+  'settings': 'Instellingen',
+  'language': 'Taal',
+  'theme': 'Thema',
+  'dark_mode': 'Donkere modus',
+  'light_mode': 'Lichte modus',
+  'purple_theme': 'Paars thema',
+  'teal_theme': 'Blauwgroen thema',
+  'english': 'Engels',
+  'french': 'Frans',
+  'amharic': 'Amhaars',
+  'arabic': 'Arabisch',
+  'spanish': 'Spaans',
+  'afrikaans': 'Afrikaans',
+  'german': 'Duits',
+  'indonesian': 'Indonesisch',
+  'portuguese': 'Portugees',
+  'turkish': 'Turks',
+  'vietnamese': 'Vietnamees',
+  'dutch': 'Nederlands',
+  //! Onboarding
+  'welcome_to_service_booking': 'Welkom bij Service Boeken',
   'discover_and_book_services':
-      'Ontdek en boek geweldige diensten binnen handbereik.', // Discover and book amazing services at your fingertips.
-  'find_perfect_service': 'Vind de perfecte dienst', // Find the Perfect Service
+      'Ontdek en boek geweldige diensten binnen handbereik.',
+  'find_perfect_service': 'Vind de perfecte dienst',
   'browse_variety_of_services':
-      'Blader door een verscheidenheid aan diensten en vind wat je nodig hebt.', // Browse through a wide variety of services and find what you need.
-  'choose_your_language': 'Kies je taal', // Choose Your Language
-  'select_preferred_language':
-      'Kies je voorkeurstaal om te beginnen.', // Select your preferred language to get started.
-  'select_language': 'Kies taal', // Select Language
-  'skip': 'Overslaan', // Skip
-  // Login
-  'welcome_back': 'Welkom terug', // Welcome Back
-  'login_to_continue':
-      'Meld aan om de app verder te gebruiken.', // Login to continue using the app.
-  'email': 'E-mail', // Email
-  'enter_your_email': 'Voer je e-mailadres in', // Enter your email
-  'password': 'Wachtwoord', // Password
-  'enter_your_password': 'Voer je wachtwoord in', // Enter your password
-  'remember_me': 'Onthoud mij', // Remember Me
-  'forgot_password': 'Wachtwoord vergeten?', // Forgot Password?
-  'login': 'Aanmelden', // Login
-  'or_sign_in_with': 'Of meld aan met', // Or sign in with
-  'dont_have_account': 'Heb je nog geen account?', // Don\'t have account?
-  'sign_up': 'Aanmelden', // Sign Up
-  'please_enter_email':
-      'Voer alsjeblieft je e-mailadres in', // Please enter your email
-  'please_enter_valid_email':
-      'Voer alsjeblieft een geldig e-mailadres in', // Please enter a valid email
-  'please_enter_password':
-      'Voer alsjeblieft je wachtwoord in', // Please enter your password
-  'password_too_short':
-      'Wachtwoord moet minstens 6 tekens lang zijn', // Password must be at least 6 characters long
-  'login_successful': 'Aanmelding succesvol!', // Login successful!
+      'Blader door een verscheidenheid aan diensten en vind wat je nodig hebt.',
+  'choose_your_language': 'Kies je taal',
+  'select_preferred_language': 'Kies je voorkeurstaal om te beginnen.',
+  'select_language': 'Kies taal',
+  'skip': 'Overslaan',
+  //! Login
+  'welcome_back': 'Welkom terug',
+  'login_to_continue': 'Meld aan om de app verder te gebruiken.',
+  'email': 'E-mail',
+  'enter_your_email': 'Voer je e-mailadres in',
+  'password': 'Wachtwoord',
+  'enter_your_password': 'Voer je wachtwoord in',
+  'remember_me': 'Onthoud mij',
+  'forgot_password': 'Wachtwoord vergeten?',
+  'login': 'Aanmelden',
+  'or_sign_in_with': 'Of meld aan met',
+  'dont_have_account': 'Heb je nog geen account?',
+  'sign_up': 'Aanmelden',
+  'please_enter_email': 'Voer alsjeblieft je e-mailadres in',
+  'please_enter_valid_email': 'Voer alsjeblieft een geldig e-mailadres in',
+  'please_enter_password': 'Voer alsjeblieft je wachtwoord in',
+  'password_too_short': 'Wachtwoord moet minstens 6 tekens lang zijn',
+  'login_successful': 'Aanmelding succesvol!',
   'forgot_password_not_implemented':
-      'De functionaliteit "Wachtwoord vergeten" is nog niet geïmplementeerd.', // Forgot password functionality is not implemented yet.
+      'De functionaliteit "Wachtwoord vergeten" is nog niet geïmplementeerd.',
   'register_not_implemented':
-      'De registratiefunctie is nog niet geïmplementeerd.', // Register functionality is not implemented yet.
-  'login_not_implemented':
-      'De aanmeldfunctie is nog niet geïmplementeerd.', // login functionality is not implemented yet.
+      'De registratiefunctie is nog niet geïmplementeerd.',
+  'login_not_implemented': 'De aanmeldfunctie is nog niet geïmplementeerd.',
+  'confirm_logout': 'Uitloggen bevestigen',
+  'are_you_sure_logout': 'Weet u zeker dat u wilt uitloggen?',
+  'logout': 'Uitloggen',
+  'home': 'Home',
+  'service_booking_app': 'Service Boekings App',
+
+  //! filter
+  'close': 'Sluiten',
+  'show_only_available': 'Toon alleen beschikbare diensten',
+
+  //! categories
+  'All': 'Alles',
+  'Cleaning': 'Schoonmaak',
+  'Repair': 'Reparatie',
+  'Gardening': 'Tuinieren',
+  'Beauty': 'Schoonheid',
+  'Education': 'Onderwijs',
+  'Automotive': 'Automotive',
+  'Other': 'Overig',
+  //! detail services
+  'check_internet_connection':
+      'Controleer alstublieft uw internetverbinding en probeer het opnieuw.',
+  'generic_service_description_body_short':
+      'Ervaar topkwaliteit service van vertrouwde professionals.\nWij bieden efficiënte oplossingen afgestemd op uw behoeften, wat tevredenheid garandeert.\nBoek met vertrouwen voor een naadloze ervaring.',
+  'professional_service_included':
+      'Professionele service door ervaren personeel',
+  'quality_equipment_included': 'Kwaliteitsapparatuur en materialen',
+  'satisfaction_guarantee_included': 'Tevredenheidsgarantie',
+  'free_follow_up_included': 'Gratis vervolgconsultatie',
+  'currency_symbol': '€',
+  'generic_service_description_body_full':
+      'Ervaar topkwaliteit service geleverd door vertrouwde professionals. Onze diensten zijn ontworpen om efficiënte oplossingen te bieden die zijn afgestemd op uw behoeften, zodat u volledige tevredenheid hebt. Wij geven prioriteit aan kwaliteit, betrouwbaarheid en een naadloze boekingservaring van begin tot eind.',
 };

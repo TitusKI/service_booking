@@ -94,4 +94,39 @@ const Map<String, String> frFR = {
       'Sélectionnez votre langue préférée pour personnaliser votre expérience.',
   'skip': 'Passer',
   'select_language': 'Sélectionner la langue',
+
+  // drawer
+  'confirm_logout': 'Confirmer la déconnexion',
+  'are_you_sure_logout': 'Voulez-vous vraiment vous déconnecter ?',
+  'logout': 'Déconnexion',
+  'home': 'Accueil',
+  'service_booking_app': 'Application de réservation de services',
+
+  // filter
+  'close': 'Fermer',
+  'show_only_available': 'Afficher uniquement les services disponibles',
+
+  // categories
+  'All': 'Tout',
+  'Cleaning': 'Nettoyage',
+  'Repair': 'Réparation',
+  'Gardening': 'Jardinage',
+  'Beauty': 'Beauté',
+  'Education': 'Éducation',
+  'Automotive': 'Automobile',
+  'Other': 'Autre',
+
+  //! detail services
+  'check_internet_connection':
+      'Veuillez vérifier votre connexion internet et réessayer.',
+  'generic_service_description_body_short':
+      'Profitez d\'un service de qualité supérieure par des professionnels de confiance.\nNous offrons des solutions efficaces adaptées à vos besoins, garantissant votre satisfaction.\nRéservez en toute confiance pour une expérience fluide.',
+  'professional_service_included':
+      'Service professionnel par un personnel expérimenté',
+  'quality_equipment_included': 'Équipement et matériaux de qualité',
+  'satisfaction_guarantee_included': 'Garantie satisfaction',
+  'free_follow_up_included': 'Consultation de suivi gratuite',
+  'currency_symbol': '€',
+  'generic_service_description_body_full':
+      'Profitez d\'un service de qualité supérieure fourni par des professionnels de confiance. Nos services sont conçus pour fournir des solutions efficaces adaptées à vos besoins, garantissant votre entière satisfaction. Nous priorisons la qualité, la fiabilité et une expérience de réservation fluide du début à la fin.',
 };

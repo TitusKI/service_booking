@@ -1,133 +1,151 @@
-// lib/config/translations/es_ES.dart
 const Map<String, String> esES = {
-  // Common
-  'app_name': 'Reserva de servicios', // Service Booking
-  'cancel': 'Cancelar', // Cancel
-  'save': 'Guardar', // Save
-  'delete': 'Eliminar', // Delete
-  'edit': 'Editar', // Edit
-  'add': 'Añadir', // Add
-  'search': 'Buscar', // Search
-  'filter': 'Filtrar', // Filter
-  'apply': 'Aplicar', // Apply
-  'reset': 'Restablecer', // Reset
-  'confirm': 'Confirmar', // Confirm
-  'loading': 'Cargando...', // Loading...
-  'error': 'Error', // Error
-  'success': 'Éxito', // Success
-  'no_data': 'No hay datos disponibles', // No data available
-  'retry': 'Reintentar', // Retry
-  // Services List
-  'services': 'Servicios', // Services
-  'search_services': 'Buscar servicios...', // Search services...
-  'no_services_found': 'No se encontraron servicios', // No services found
-  'try_adjusting_search':
-      'Intenta ajustar tu búsqueda o filtros', // Try adjusting your search or filters
-  'add_service': 'Añadir servicio', // Add Service
-  'service_deleted':
-      'Servicio eliminado con éxito', // Service deleted successfully
-  'all': 'Todos', // All
-  'filter_services': 'Filtrar servicios', // Filter Services
-  'categories': 'Categorías', // Categories
-  'price_range': 'Rango de precio', // Price Range
-  'reset_filters': 'Restablecer filtros', // Reset Filters
-  // Service Details
-  'price': 'Precio', // Price
-  'duration': 'Duración', // Duration
-  'minutes': 'min', // min
-  'description': 'Descripción', // Description
-  'whats_included': 'Qué incluye', // What\'s Included
-  'book_now': 'Reservar ahora', // Book Now
-  'booking_confirmation': 'Confirmación de reserva', // Booking Confirmation
-  'booking_question':
-      '¿Le gustaría reservar este servicio?', // Would you like to book this service?
-  'booking_successful': 'Reserva realizada con éxito!', // Booking successful!
-  'available': 'Disponible', // Available
-  'unavailable': 'No disponible', // Unavailable
-  // Add/Edit Service
-  'add_new_service': 'Añadir nuevo servicio', // Add New Service
-  'edit_service': 'Editar servicio', // Edit Service
-  'service_name': 'Nombre del servicio', // Service Name
-  'enter_service_name': 'Ingrese el nombre del servicio', // Enter service name
-  'category': 'Categoría', // Category
-  'price_dollar': 'Precio (\$)', // Price ($)
-  'duration_minutes': 'Duración (minutos)', // Duration (minutes)
-  'image_url': 'URL de la imagen', // Image URL
-  'enter_image_url': 'https://example.com/image.jpg', // Enter image URL
-  'rating': 'Valoración (0-5)', // Rating (0-5)
-  'availability': 'Disponibilidad', // Availability
-  'update_service': 'Actualizar servicio', // Update Service
-  'add_service_button': 'Añadir servicio', // Add Service button
-  'delete_service': 'Eliminar servicio', // Delete Service
+  'app_name': 'Reserva de servicios',
+  'cancel': 'Cancelar',
+  'save': 'Guardar',
+  'delete': 'Eliminar',
+  'edit': 'Editar',
+  'add': 'Añadir',
+  'search': 'Buscar',
+  'filter': 'Filtrar',
+  'apply': 'Aplicar',
+  'reset': 'Restablecer',
+  'confirm': 'Confirmar',
+  'loading': 'Cargando...',
+  'error': 'Error',
+  'success': 'Éxito',
+  'no_data': 'No hay datos disponibles',
+  'retry': 'Reintentar',
+
+  'services': 'Servicios',
+  'search_services': 'Buscar servicios...',
+  'no_services_found': 'No se encontraron servicios',
+  'try_adjusting_search': 'Intenta ajustar tu búsqueda o filtros',
+  'add_service': 'Añadir servicio',
+  'service_deleted': 'Servicio eliminado con éxito',
+  'all': 'Todos',
+  'filter_services': 'Filtrar servicios',
+  'categories': 'Categorías',
+  'price_range': 'Rango de precio',
+  'reset_filters': 'Restablecer filtros',
+  //! Service Details
+  'price': 'Precio',
+  'duration': 'Duración',
+  'minutes': 'min',
+  'description': 'Descripción',
+  'whats_included': 'Qué incluye',
+  'book_now': 'Reservar ahora',
+  'booking_confirmation': 'Confirmación de reserva',
+  'booking_question': '¿Le gustaría reservar este servicio?',
+  'booking_successful': 'Reserva realizada con éxito!',
+  'available': 'Disponible',
+  'unavailable': 'No disponible',
+  //! Add/Edit Service
+  'add_new_service': 'Añadir nuevo servicio',
+  'edit_service': 'Editar servicio',
+  'service_name': 'Nombre del servicio',
+  'enter_service_name': 'Ingrese el nombre del servicio',
+  'category': 'Categoría',
+  'price_dollar': 'Precio (\$)',
+  'duration_minutes': 'Duración (minutos)',
+  'image_url': 'URL de la imagen',
+  'enter_image_url': 'https://example.com/image.jpg',
+  'rating': 'Valoración (0-5)',
+  'availability': 'Disponibilidad',
+  'update_service': 'Actualizar servicio',
+  'add_service_button': 'Añadir servicio',
+  'delete_service': 'Eliminar servicio',
   'delete_confirmation':
-      '¿Estás seguro de que quieres eliminar este servicio? Esta acción no se puede deshacer.', // Are you sure you want to delete this service? This action cannot be undone.
-  'service_added': 'Servicio añadido con éxito', // Service added successfully
-  'service_updated':
-      'Servicio actualizado con éxito', // Service updated successfully
-  'invalid_image': 'URL de imagen no válida', // Invalid image URL
-  // Validation
-  'field_required': 'Este campo es obligatorio', // This field is required
-  'invalid_price': 'Precio no válido', // Invalid price
-  'invalid_duration': 'Duración no válida', // Invalid duration
-  'invalid_url':
-      'Por favor, introduzca una URL válida', // Please enter a valid URL
-  'invalid_rating': 'Valoración no válida', // Invalid rating
-  'rating_range':
-      'La valoración debe estar entre 0 y 5', // Rating must be between 0-5
-  // Settings
-  'settings': 'Configuración', // Settings
-  'language': 'Idioma', // Language
-  'theme': 'Tema', // Theme
-  'dark_mode': 'Modo oscuro', // Dark Mode
-  'light_mode': 'Modo claro', // Light Mode
-  'purple_theme': 'Tema morado', // Purple Theme
-  'teal_theme': 'Tema verde azulado', // Teal Theme
-  'english': 'Inglés', // English
-  'french': 'Francés', // French
-  'amharic': 'Amárico', // Amharic
-  'arabic': 'Árabe', // Arabic
-  'spanish': 'Español', // Spanish (Added for Spanish)
-  // Onboarding
-  'welcome_to_service_booking':
-      'Bienvenido a la reserva de servicios', // Welcome to Service Booking
+      '¿Estás seguro de que quieres eliminar este servicio? Esta acción no se puede deshacer.',
+  'service_added': 'Servicio añadido con éxito',
+  'service_updated': 'Servicio actualizado con éxito',
+  'invalid_image': 'URL de imagen no válida',
+  //! Validation
+  'field_required': 'Este campo es obligatorio',
+  'invalid_price': 'Precio no válido',
+  'invalid_duration': 'Duración no válida',
+  'invalid_url': 'Por favor, introduzca una URL válida',
+  'invalid_rating': 'Valoración no válida',
+  'rating_range': 'La valoración debe estar entre 0 y 5',
+  //! Settings
+  'settings': 'Configuración',
+  'language': 'Idioma',
+  'theme': 'Tema',
+  'dark_mode': 'Modo oscuro',
+  'light_mode': 'Modo claro',
+  'purple_theme': 'Tema morado',
+  'teal_theme': 'Tema verde azulado',
+  'english': 'Inglés',
+  'french': 'Francés',
+  'amharic': 'Amárico',
+  'arabic': 'Árabe',
+  'spanish': 'Español',
+  //! Onboarding
+  'welcome_to_service_booking': 'Bienvenido a la reserva de servicios',
   'discover_and_book_services':
-      'Descubre y reserva servicios increíbles al alcance de tu mano.', // Discover and book amazing services at your fingertips.
-  'find_perfect_service':
-      'Encuentra el servicio perfecto', // Find the Perfect Service
+      'Descubre y reserva servicios increíbles al alcance de tu mano.',
+  'find_perfect_service': 'Encuentra el servicio perfecto',
   'browse_variety_of_services':
-      'Explora una amplia variedad de servicios y encuentra lo que necesitas.', // Browse through a wide variety of services and find what you need.
-  'choose_your_language': 'Elige tu idioma', // Choose Your Language
-  'select_preferred_language':
-      'Selecciona tu idioma preferido para empezar.', // Select your preferred language to get started.
-  'select_language': 'Seleccionar idioma', // Select Language
-  'skip': 'Saltar', // Skip
-  // Login
-  'welcome_back': 'Bienvenido de nuevo', // Welcome Back
-  'login_to_continue':
-      'Inicia sesión para seguir usando la aplicación.', // Login to continue using the app.
-  'email': 'Correo electrónico', // Email
-  'enter_your_email': 'Introduce tu correo electrónico', // Enter your email
-  'password': 'Contraseña', // Password
-  'enter_your_password': 'Introduce tu contraseña', // Enter your password
-  'remember_me': 'Recordarme', // Remember Me
-  'forgot_password': '¿Olvidaste tu contraseña?', // Forgot Password?
-  'login': 'Iniciar sesión', // Login
-  'or_sign_in_with': 'O inicia sesión con', // Or sign in with
-  'dont_have_account': '¿No tienes cuenta?', // Don\'t have account?
-  'sign_up': 'Registrarse', // Sign Up
-  'please_enter_email':
-      'Por favor, introduce tu correo electrónico', // Please enter
+      'Explora una amplia variedad de servicios y encuentra lo que necesitas.',
+  'choose_your_language': 'Elige tu idioma',
+  'select_preferred_language': 'Selecciona tu idioma preferido para empezar.',
+  'select_language': 'Seleccionar idioma',
+  'skip': 'Saltar',
+
+  'welcome_back': 'Bienvenido de nuevo',
+  'login_to_continue': 'Inicia sesión para seguir usando la aplicación.',
+  'email': 'Correo electrónico',
+  'enter_your_email': 'Introduce tu correo electrónico',
+  'password': 'Contraseña',
+  'enter_your_password': 'Introduce tu contraseña',
+  'remember_me': 'Recordarme',
+  'forgot_password': '¿Olvidaste tu contraseña?',
+  'login': 'Iniciar sesión',
+  'or_sign_in_with': 'O inicia sesión con',
+  'dont_have_account': '¿No tienes cuenta?',
+  'sign_up': 'Registrarse',
+  'please_enter_email': 'Por favor, introduce tu correo electrónico',
   'please_enter_valid_email':
-      'Por favor, introduce un correo electrónico válido', // Please enter a valid email
-  'please_enter_password':
-      'Por favor, introduce tu contraseña', // Please enter your password
-  'password_too_short':
-      'La contraseña debe tener al menos 6 caracteres', // Password must be at least 6 characters long
-  'login_successful': 'Inicio de sesión exitoso!', // Login successful!
+      'Por favor, introduce un correo electrónico válido',
+  'please_enter_password': 'Por favor, introduce tu contraseña',
+  'password_too_short': 'La contraseña debe tener al menos 6 caracteres',
+  'login_successful': 'Inicio de sesión exitoso!',
   'forgot_password_not_implemented':
-      'La funcionalidad de olvidar contraseña no está implementada todavía.', // Forgot password functionality is not implemented yet.
+      'La funcionalidad de olvidar contraseña no está implementada todavía.',
   'register_not_implemented':
-      'La funcionalidad de registro no está implementada todavía.', // Register functionality is not implemented yet.
+      'La funcionalidad de registro no está implementada todavía.',
   'login_not_implemented':
-      'La funcionalidad de inicio de sesión no está implementada todavía.', // login functionality is not implemented yet.
+      'La funcionalidad de inicio de sesión no está implementada todavía.',
+  'confirm_logout': 'Confirmar cierre de sesión',
+  'are_you_sure_logout': '¿Estás seguro de que quieres cerrar sesión?',
+  'logout': 'Cerrar sesión',
+  'home': 'Inicio',
+  'service_booking_app': 'Aplicación de reserva de servicios',
+
+  //! filter
+  'close': 'Cerrar',
+  'show_only_available': 'Mostrar solo servicios disponibles',
+
+  //! categories
+  'All': 'Todos',
+  'Cleaning': 'Limpieza',
+  'Repair': 'Reparación',
+  'Gardening': 'Jardinería',
+  'Beauty': 'Belleza',
+  'Education': 'Educación',
+  'Automotive': 'Automotriz',
+  'Other': 'Otro',
+
+  //! Details services
+  'check_internet_connection':
+      'Por favor, verifica tu conexión a internet e inténtalo de nuevo.',
+  'generic_service_description_body_short':
+      'Experimenta un servicio de alta calidad de profesionales de confianza.\nOfrecemos soluciones eficientes adaptadas a tus necesidades, garantizando satisfacción.\nReserva con confianza para una experiencia sin interrupciones.',
+  'professional_service_included':
+      'Servicio profesional! por personal experimentado',
+  'quality_equipment_included': 'Equipamiento y materiales de calidad',
+  'satisfaction_guarantee_included': 'Garantía de satisfacción',
+  'free_follow_up_included': 'Consulta de seguimiento gratuita',
+  'currency_symbol': '€',
+  'generic_service_description_body_full':
+      'Experimenta un servicio de alta calidad brindado por profesionales de confianza. Nuestros servicios están diseñados para proporcionar soluciones eficientes adaptadas a tus necesidades, garantizando tu completa satisfacción. Priorizamos la calidad, la confiabilidad y una experiencia de reserva fluida de principio a fin.',
 };

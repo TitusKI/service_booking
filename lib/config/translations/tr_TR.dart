@@ -1,135 +1,154 @@
-// lib/config/translations/tr_TR.dart
 const Map<String, String> trTR = {
-  // Common
-  'app_name': 'Hizmet Rezervasyonu', // Service Booking
-  'cancel': 'İptal', // Cancel
-  'save': 'Kaydet', // Save
-  'delete': 'Sil', // Delete
-  'edit': 'Düzenle', // Edit
-  'add': 'Ekle', // Add
-  'search': 'Ara', // Search
-  'filter': 'Filtrele', // Filter
-  'apply': 'Uygula', // Apply
-  'reset': 'Sıfırla', // Reset
-  'confirm': 'Onayla', // Confirm
-  'loading': 'Yükleniyor...', // Loading...
-  'error': 'Hata', // Error
-  'success': 'Başarılı', // Success
-  'no_data': 'Veri yok', // No data available
-  'retry': 'Tekrar dene', // Retry
-  // Services List
-  'services': 'Hizmetler', // Services
-  'search_services': 'Hizmetleri ara...', // Search services...
-  'no_services_found': 'Hizmet bulunamadı', // No services found
-  'try_adjusting_search':
-      'Aramanı veya filtrelerini ayarlamayı dene', // Try adjusting your search or filters
-  'add_service': 'Hizmet Ekle', // Add Service
-  'service_deleted': 'Hizmet başarıyla silindi', // Service deleted successfully
-  'all': 'Tümü', // All
-  'filter_services': 'Hizmetleri Filtrele', // Filter Services
-  'categories': 'Kategoriler', // Categories
-  'price_range': 'Fiyat Aralığı', // Price Range
-  'reset_filters': 'Filtreleri Sıfırla', // Reset Filters
-  // Service Details
-  'price': 'Fiyat', // Price
-  'duration': 'Süre', // Duration
-  'minutes': 'dk', // min
-  'description': 'Açıklama', // Description
-  'whats_included': 'Neler Dahil', // What\'s Included
-  'book_now': 'Şimdi Rezervasyon Yap', // Book Now
-  'booking_confirmation': 'Rezervasyon Onayı', // Booking Confirmation
-  'booking_question':
-      'Bu hizmeti rezerve etmek ister misiniz?', // Would you like to book this service?
-  'booking_successful': 'Rezervasyon başarılı!', // Booking successful!
-  'available': 'Mevcut', // Available
-  'unavailable': 'Mevcut değil', // Unavailable
-  // Add/Edit Service
-  'add_new_service': 'Yeni Hizmet Ekle', // Add New Service
-  'edit_service': 'Hizmeti Düzenle', // Edit Service
-  'service_name': 'Hizmet Adı', // Service Name
-  'enter_service_name': 'Hizmet adını girin', // Enter service name
-  'category': 'Kategori', // Category
-  'price_dollar': 'Fiyat (\$)', // Price ($)
-  'duration_minutes': 'Süre (dakika)', // Duration (minutes)
-  'image_url': 'Görsel URL\'si', // Image URL
-  'enter_image_url': 'https://example.com/image.jpg', // Enter image URL
-  'rating': 'Değerlendirme (0-5)', // Rating (0-5)
-  'availability': 'Müsaitlik', // Availability
-  'update_service': 'Hizmeti Güncelle', // Update Service
-  'add_service_button': 'Hizmet Ekle', // Add Service button
-  'delete_service': 'Hizmeti Sil', // Delete Service
+  //! Common
+  'app_name': 'Hizmet Rezervasyonu',
+  'cancel': 'İptal',
+  'save': 'Kaydet',
+  'delete': 'Sil',
+  'edit': 'Düzenle',
+  'add': 'Ekle',
+  'search': 'Ara',
+  'filter': 'Filtrele',
+  'apply': 'Uygula',
+  'reset': 'Sıfırla',
+  'confirm': 'Onayla',
+  'loading': 'Yükleniyor...',
+  'error': 'Hata',
+  'success': 'Başarılı',
+  'no_data': 'Veri yok',
+  'retry': 'Tekrar dene',
+  //! Services List
+  'services': 'Hizmetler',
+  'search_services': 'Hizmetleri ara...',
+  'no_services_found': 'Hizmet bulunamadı',
+  'try_adjusting_search': 'Aramanı veya filtrelerini ayarlamayı dene',
+  'add_service': 'Hizmet Ekle',
+  'service_deleted': 'Hizmet başarıyla silindi',
+  'all': 'Tümü',
+  'filter_services': 'Hizmetleri Filtrele',
+  'categories': 'Kategoriler',
+  'price_range': 'Fiyat Aralığı',
+  'reset_filters': 'Filtreleri Sıfırla',
+  //! Service Details
+  'price': 'Fiyat',
+  'duration': 'Süre',
+  'minutes': 'dk',
+  'description': 'Açıklama',
+  'whats_included': 'Neler Dahil',
+  'book_now': 'Şimdi Rezervasyon Yap',
+  'booking_confirmation': 'Rezervasyon Onayı',
+  'booking_question': 'Bu hizmeti rezerve etmek ister misiniz?',
+  'booking_successful': 'Rezervasyon başarılı!',
+  'available': 'Mevcut',
+  'unavailable': 'Mevcut değil',
+  //! Add/Edit Service
+  'add_new_service': 'Yeni Hizmet Ekle',
+  'edit_service': 'Hizmeti Düzenle',
+  'service_name': 'Hizmet Adı',
+  'enter_service_name': 'Hizmet adını girin',
+  'category': 'Kategori',
+  'price_dollar': 'Fiyat (\$)',
+  'duration_minutes': 'Süre (dakika)',
+  'image_url': 'Görsel URL\'si',
+  'enter_image_url': 'https://example.com/image.jpg',
+  'rating': 'Değerlendirme (0-5)',
+  'availability': 'Müsaitlik',
+  'update_service': 'Hizmeti Güncelle',
+  'add_service_button': 'Hizmet Ekle',
+  'delete_service': 'Hizmeti Sil',
   'delete_confirmation':
-      'Bu hizmeti silmek istediğinize emin misiniz? Bu işlem geri alınamaz.', // Are you sure you want to delete this service? This action cannot be undone.
-  'service_added': 'Hizmet başarıyla eklendi', // Service added successfully
-  'service_updated':
-      'Hizmet başarıyla güncellendi', // Service updated successfully
-  'invalid_image': 'Geçersiz görsel URL\'si', // Invalid image URL
-  // Validation
-  'field_required': 'Bu alan zorunludur', // This field is required
-  'invalid_price': 'Geçersiz fiyat', // Invalid price
-  'invalid_duration': 'Geçersiz süre', // Invalid duration
-  'invalid_url': 'Lütfen geçerli bir URL girin', // Please enter a valid URL
-  'invalid_rating': 'Geçersiz değerlendirme', // Invalid rating
-  'rating_range':
-      'Değerlendirme 0-5 arasında olmalıdır', // Rating must be between 0-5
-  // Settings
-  'settings': 'Ayarlar', // Settings
-  'language': 'Dil', // Language
-  'theme': 'Tema', // Theme
-  'dark_mode': 'Koyu Mod', // Dark Mode
-  'light_mode': 'Açık Mod', // Light Mode
-  'purple_theme': 'Mor Tema', // Purple Theme
-  'teal_theme': 'Turkuaz Tema', // Teal Theme
-  'english': 'İngilizce', // English
-  'french': 'Fransızca', // French
-  'amharic': 'Amharca', // Amharic
-  'arabic': 'Arapça', // Arabic
-  'spanish': 'İspanyolca', // Spanish
-  'afrikaans': 'Afrikaans', // Afrikaans
-  'german': 'Almanca', // German
-  'indonesian': 'Endonezce', // Indonesian
-  'portuguese': 'Portekizce', // Portuguese
-  'turkish': 'Türkçe', // Turkish (Added for Turkish)
-  // Onboarding
-  'welcome_to_service_booking':
-      'Hizmet Rezervasyonu\'na Hoş Geldiniz', // Welcome to Service Booking
+      'Bu hizmeti silmek istediğinize emin misiniz? Bu işlem geri alınamaz.',
+  'service_added': 'Hizmet başarıyla eklendi',
+  'service_updated': 'Hizmet başarıyla güncellendi',
+  'invalid_image': 'Geçersiz görsel URL\'si',
+  //! Validation
+  'field_required': 'Bu alan zorunludur',
+  'invalid_price': 'Geçersiz fiyat',
+  'invalid_duration': 'Geçersiz süre',
+  'invalid_url': 'Lütfen geçerli bir URL girin',
+  'invalid_rating': 'Geçersiz değerlendirme',
+  'rating_range': 'Değerlendirme 0-5 arasında olmalıdır',
+  //! Settings
+  'settings': 'Ayarlar',
+  'language': 'Dil',
+  'theme': 'Tema',
+  'dark_mode': 'Koyu Mod',
+  'light_mode': 'Açık Mod',
+  'purple_theme': 'Mor Tema',
+  'teal_theme': 'Turkuaz Tema',
+  'english': 'İngilizce',
+  'french': 'Fransızca',
+  'amharic': 'Amharca',
+  'arabic': 'Arapça',
+  'spanish': 'İspanyolca',
+  'afrikaans': 'Afrikaans',
+  'german': 'Almanca',
+  'indonesian': 'Endonezce',
+  'portuguese': 'Portekizce',
+  'turkish': 'Türkçe',
+  //! Onboarding
+  'welcome_to_service_booking': 'Hizmet Rezervasyonu\'na Hoş Geldiniz',
   'discover_and_book_services':
-      'Parmaklarınızın ucundaki harika hizmetleri keşfedin ve rezerve edin.', // Discover and book amazing services at your fingertips.
-  'find_perfect_service': 'Mükemmel Hizmeti Bulun', // Find the Perfect Service
+      'Parmaklarınızın ucundaki harika hizmetleri keşfedin ve rezerve edin.',
+  'find_perfect_service': 'Mükemmel Hizmeti Bulun',
   'browse_variety_of_services':
-      'Çeşitli hizmetlere göz atın ve ihtiyacınız olanı bulun.', // Browse through a wide variety of services and find what you need.
-  'choose_your_language': 'Dilinizi Seçin', // Choose Your Language
-  'select_preferred_language':
-      'Başlamak için tercih ettiğiniz dili seçin.', // Select your preferred language to get started.
-  'select_language': 'Dil Seçin', // Select Language
-  'skip': 'Atla', // Skip
-  // Login
-  'welcome_back': 'Tekrar hoş geldiniz', // Welcome Back
-  'login_to_continue':
-      'Uygulamayı kullanmaya devam etmek için giriş yapın.', // Login to continue using the app.
-  'email': 'E-posta', // Email
-  'enter_your_email': 'E-posta adresinizi girin', // Enter your email
-  'password': 'Şifre', // Password
-  'enter_your_password': 'Şifrenizi girin', // Enter your password
-  'remember_me': 'Beni hatırla', // Remember Me
-  'forgot_password': 'Şifremi Unuttum?', // Forgot Password?
-  'login': 'Giriş Yap', // Login
-  'or_sign_in_with': 'Veya ile giriş yapın', // Or sign in with
-  'dont_have_account': 'Hesabınız yok mu?', // Don\'t have account?
-  'sign_up': 'Kaydol', // Sign Up
-  'please_enter_email':
-      'Lütfen e-posta adresinizi girin', // Please enter your email
-  'please_enter_valid_email':
-      'Lütfen geçerli bir e-posta adresi girin', // Please enter a valid email
-  'please_enter_password':
-      'Lütfen şifrenizi girin', // Please enter your password
-  'password_too_short':
-      'Şifre en az 6 karakter uzunluğunda olmalıdır', // Password must be at least 6 characters long
-  'login_successful': 'Giriş başarılı!', // Login successful!
+      'Çeşitli hizmetlere göz atın ve ihtiyacınız olanı bulun.',
+  'choose_your_language': 'Dilinizi Seçin',
+  'select_preferred_language': 'Başlamak için tercih ettiğiniz dili seçin.',
+  'select_language': 'Dil Seçin',
+  'skip': 'Atla',
+  //! Login
+  'welcome_back': 'Tekrar hoş geldiniz',
+  'login_to_continue': 'Uygulamayı kullanmaya devam etmek için giriş yapın.',
+  'email': 'E-posta',
+  'enter_your_email': 'E-posta adresinizi girin',
+  'password': 'Şifre',
+  'enter_your_password': 'Şifrenizi girin',
+  'remember_me': 'Beni hatırla',
+  'forgot_password': 'Şifremi Unuttum?',
+  'login': 'Giriş Yap',
+  'or_sign_in_with': 'Veya ile giriş yapın',
+  'dont_have_account': 'Hesabınız yok mu?',
+  'sign_up': 'Kaydol',
+  'please_enter_email': 'Lütfen e-posta adresinizi girin',
+  'please_enter_valid_email': 'Lütfen geçerli bir e-posta adresi girin',
+  'please_enter_password': 'Lütfen şifrenizi girin',
+  'password_too_short': 'Şifre en az 6 karakter uzunluğunda olmalıdır',
+  'login_successful': 'Giriş başarılı!',
   'forgot_password_not_implemented':
-      '"Şifremi Unuttum" işlevi henüz uygulanmadı.', // Forgot password functionality is not implemented yet.
-  'register_not_implemented':
-      'Kayıt işlevi henüz uygulanmadı.', // Register functionality is not implemented yet.
-  'login_not_implemented':
-      'Giriş işlevi henüz uygulanmadı.', // login functionality is not implemented yet.
+      '"Şifremi Unuttum" işlevi henüz uygulanmadı.',
+  'register_not_implemented': 'Kayıt işlevi henüz uygulanmadı.',
+  'login_not_implemented': 'Giriş işlevi henüz uygulanmadı.',
+  'confirm_logout': 'Çıkışı Onayla',
+  'are_you_sure_logout': 'Çıkış yapmak istediğinize emin misiniz?',
+  'logout': 'Çıkış',
+  'home': 'Ana Sayfa',
+  'service_booking_app': 'Hizmet Rezervasyon Uygulaması',
+
+  //! filter
+  'close': 'Kapat',
+  'show_only_available': 'Yalnızca uygun hizmetleri göster',
+
+  //! categories
+  'All': 'Tümü',
+  'Cleaning': 'Temizlik',
+  'Repair': 'Onarım',
+  'Gardening': 'Bahçıvanlık',
+  'Beauty': 'Güzellik',
+  'Education': 'Eğitim',
+  'Automotive': 'Otomotiv',
+  'Other': 'Diğer',
+  //! Detail services
+  'check_internet_connection':
+      'Lütfen internet bağlantınızı kontrol edin ve tekrar deneyin.',
+
+  'generic_service_description_body_short':
+      'Güvenilir profesyonellerden en kaliteli hizmeti deneyimleyin.\nİhtiyaçlarınıza özel etkili çözümler sunuyor, memnuniyetinizi sağlıyoruz.\nSorunsuz bir deneyim için güvenle rezervasyon yapın.',
+  'professional_service_included':
+      'Deneyimli personel tarafından profesyonel hizmet',
+  'quality_equipment_included': 'Kaliteli ekipman ve malzemeler',
+  'satisfaction_guarantee_included': 'Memnuniyet garantisi',
+  'free_follow_up_included': 'Ücretsiz takip danışmanlığı',
+  'currency_symbol': '₺',
+  'generic_service_description_body_full':
+      'Güvenilir profesyoneller tarafından sunulan en kaliteli hizmeti deneyimleyin. Hizmetlerimiz, ihtiyaçlarınıza özel etkili çözümler sunarak tam memnuniyetinizi sağlamak için tasarlanmıştır. Başlangıçtan bitişe kadar kaliteye, güvenilirliğe ve sorunsuz bir rezervasyon deneyimine öncelik veriyoruz.',
 };

@@ -94,4 +94,38 @@ const Map<String, String> enUS = {
       'Select your preferred language to personalize your experience.',
   'skip': 'Skip',
   'select_language': 'Select Language',
+
+  // drawer
+  'confirm_logout': 'Confirm Logout',
+  'are_you_sure_logout': 'Are you sure you want to logout?',
+  'logout': 'Logout',
+  'home': 'Home',
+  'service_booking_app': 'Service Booking App',
+
+  // filter
+  'close': 'Close',
+  'show_only_available': 'Show only available services',
+
+  // categories
+  'All': 'All',
+  'Cleaning': 'Cleaning',
+  'Repair': 'Repair',
+  'Gardening': 'Gardening',
+  'Beauty': 'Beauty',
+  'Education': 'Education',
+  'Automotive': 'Automotive',
+  'Other': 'Other',
+
+  // Details services
+  'check_internet_connection':
+      'Please check your internet connection and try again.',
+  'generic_service_description_body_short':
+      'Experience top-quality service from trusted professionals.\nWe provide efficient solutions tailored to your needs, ensuring satisfaction.\nBook with confidence for a seamless experience.',
+  'professional_service_included': 'Professional service by experienced staff',
+  'quality_equipment_included': 'Quality equipment and materials',
+  'satisfaction_guarantee_included': 'Satisfaction guarantee',
+  'free_follow_up_included': 'Free follow-up consultation',
+  'currency_symbol': '\$',
+  'generic_service_description_body_full':
+      'Experience top-quality service delivered by trusted professionals. Our services are designed to provide efficient solutions tailored to your needs, ensuring your complete satisfaction. We prioritize quality, reliability, and a seamless booking experience from start to finish.',
 };

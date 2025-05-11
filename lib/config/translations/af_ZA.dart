@@ -1,132 +1,150 @@
-// lib/config/translations/af_ZA.dart
 const Map<String, String> afZA = {
-  // Common
-  'app_name': 'Diensbespreking', // Service Booking
-  'cancel': 'Kanselleer', // Cancel
-  'save': 'Stoor', // Save
-  'delete': 'Verwyder', // Delete
-  'edit': 'Wysig', // Edit
-  'add': 'Voeg by', // Add
-  'search': 'Soek', // Search
-  'filter': 'Filter', // Filter
-  'apply': 'Pas toe', // Apply
-  'reset': 'Herstel', // Reset
-  'confirm': 'Bevestig', // Confirm
-  'loading': 'Laai tans...', // Loading...
-  'error': 'Fout', // Error
-  'success': 'Sukses', // Success
-  'no_data': 'Geen data beskikbaar', // No data available
-  'retry': 'Probeer weer', // Retry
-  // Services List
-  'services': 'Dienste', // Services
-  'search_services': 'Soek dienste...', // Search services...
-  'no_services_found': 'Geen dienste gevind nie', // No services found
-  'try_adjusting_search':
-      'Probeer jou soektog of filters aanpas', // Try adjusting your search or filters
-  'add_service': 'Voeg diens by', // Add Service
-  'service_deleted': 'Diens suksesvol verwyder', // Service deleted successfully
-  'all': 'Alles', // All
-  'filter_services': 'Filter dienste', // Filter Services
-  'categories': 'Kategorieë', // Categories
-  'price_range': 'Prysreeks', // Price Range
-  'reset_filters': 'Herstel filters', // Reset Filters
-  // Service Details
-  'price': 'Prys', // Price
-  'duration': 'Duur', // Duration
-  'minutes': 'min', // min
-  'description': 'Beskrywing', // Description
-  'whats_included': 'Wat is ingesluit', // What\'s Included
-  'book_now': 'Besprek nou', // Book Now
-  'booking_confirmation': 'Bespreking bevestiging', // Booking Confirmation
-  'booking_question':
-      'Wil u hierdie diens bespreek?', // Would you like to book this service?
-  'booking_successful': 'Bespreking suksesvol!', // Booking successful!
-  'available': 'Beskikbaar', // Available
-  'unavailable': 'Nie beskikbaar nie', // Unavailable
-  // Add/Edit Service
-  'add_new_service': 'Voeg nuwe diens by', // Add New Service
-  'edit_service': 'Wysig diens', // Edit Service
-  'service_name': 'Diensnaam', // Service Name
-  'enter_service_name': 'Voer diensnaam in', // Enter service name
-  'category': 'Kategorie', // Category
-  'price_dollar': 'Prys (\$)', // Price ($)
-  'duration_minutes': 'Duur (minute)', // Duration (minutes)
-  'image_url': 'Prent-URL', // Image URL
-  'enter_image_url': 'https://example.com/image.jpg', // Enter image URL
-  'rating': 'Gradering (0-5)', // Rating (0-5)
-  'availability': 'Beskikbaarheid', // Availability
-  'update_service': 'Dateer diens op', // Update Service
-  'add_service_button': 'Voeg diens by', // Add Service button
-  'delete_service': 'Verwyder diens', // Delete Service
+  //! Common
+  'app_name': 'Diensbespreking',
+  'cancel': 'Kanselleer',
+  'save': 'Stoor',
+  'delete': 'Verwyder',
+  'edit': 'Wysig',
+  'add': 'Voeg by',
+  'search': 'Soek',
+  'filter': 'Filter',
+  'apply': 'Pas toe',
+  'reset': 'Herstel',
+  'confirm': 'Bevestig',
+  'loading': 'Laai tans...',
+  'error': 'Fout',
+  'success': 'Sukses',
+  'no_data': 'Geen data beskikbaar',
+  'retry': 'Probeer weer',
+  //! Services List
+  'services': 'Dienste',
+  'search_services': 'Soek dienste...',
+  'no_services_found': 'Geen dienste gevind nie',
+  'try_adjusting_search': 'Probeer jou soektog of filters aanpas',
+  'add_service': 'Voeg diens by',
+  'service_deleted': 'Diens suksesvol verwyder',
+  'all': 'Alles',
+  'filter_services': 'Filter dienste',
+  'categories': 'Kategorieë',
+  'price_range': 'Prysreeks',
+  'reset_filters': 'Herstel filters',
+  //! Service Details
+  'price': 'Prys',
+  'duration': 'Duur',
+  'minutes': 'min',
+  'description': 'Beskrywing',
+  'whats_included': 'Wat is ingesluit',
+  'book_now': 'Besprek nou',
+  'booking_confirmation': 'Bespreking bevestiging',
+  'booking_question': 'Wil u hierdie diens bespreek?',
+  'booking_successful': 'Bespreking suksesvol!',
+  'available': 'Beskikbaar',
+  'unavailable': 'Nie beskikbaar nie',
+  //! Add/Edit Service
+  'add_new_service': 'Voeg nuwe diens by',
+  'edit_service': 'Wysig diens',
+  'service_name': 'Diensnaam',
+  'enter_service_name': 'Voer diensnaam in',
+  'category': 'Kategorie',
+  'price_dollar': 'Prys (\$)',
+  'duration_minutes': 'Duur (minute)',
+  'image_url': 'Prent-URL',
+  'enter_image_url': 'https://example.com/image.jpg',
+  'rating': 'Gradering (0-5)',
+  'availability': 'Beskikbaarheid',
+  'update_service': 'Dateer diens op',
+  'add_service_button': 'Voeg diens by',
+  'delete_service': 'Verwyder diens',
   'delete_confirmation':
-      'Is jy seker jy wil hierdie diens verwyder? Hierdie aksie kan nie ongedaan gemaak word nie.', // Are you sure you want to delete this service? This action cannot be undone.
-  'service_added': 'Diens suksesvol bygevoeg', // Service added successfully
-  'service_updated':
-      'Diens suksesvol opgedateer', // Service updated successfully
-  'invalid_image': 'Ongeldige prent-URL', // Invalid image URL
-  // Validation
-  'field_required': 'Hierdie veld word vereis', // This field is required
-  'invalid_price': 'Ongeldige prys', // Invalid price
-  'invalid_duration': 'Ongeldige duur', // Invalid duration
-  'invalid_url':
-      'Voer asseblief \'n geldige URL in', // Please enter a valid URL
-  'invalid_rating': 'Ongeldige gradering', // Invalid rating
-  'rating_range':
-      'Gradering moet tussen 0-5 wees', // Rating must be between 0-5
-  // Settings
-  'settings': 'Instellings', // Settings
-  'language': 'Taal', // Language
-  'theme': 'Tema', // Theme
-  'dark_mode': 'Donker modus', // Dark Mode
-  'light_mode': 'Lig modus', // Light Mode
-  'purple_theme': 'Pers tema', // Purple Theme
-  'teal_theme': 'Groenblou tema', // Teal Theme
-  'english': 'Engels', // English
-  'french': 'Frans', // French
-  'amharic': 'Amharies', // Amharic
-  'arabic': 'Arabies', // Arabic
-  'spanish': 'Spaans', // Spanish
-  'afrikaans': 'Afrikaans', // Afrikaans (Added for Afrikaans)
-  // Onboarding
-  'welcome_to_service_booking':
-      'Welkom by Diensbespreking', // Welcome to Service Booking
+      'Is jy seker jy wil hierdie diens verwyder? Hierdie aksie kan nie ongedaan gemaak word nie.',
+  'service_added': 'Diens suksesvol bygevoeg',
+  'service_updated': 'Diens suksesvol opgedateer',
+  'invalid_image': 'Ongeldige prent-URL',
+  //! Validation
+  'field_required': 'Hierdie veld word vereis',
+  'invalid_price': 'Ongeldige prys',
+  'invalid_duration': 'Ongeldige duur',
+  'invalid_url': 'Voer asseblief \'n geldige URL in',
+  'invalid_rating': 'Ongeldige gradering',
+  'rating_range': 'Gradering moet tussen 0-5 wees',
+  //! Settings
+  'settings': 'Instellings',
+  'language': 'Taal',
+  'theme': 'Tema',
+  'dark_mode': 'Donker modus',
+  'light_mode': 'Lig modus',
+  'purple_theme': 'Pers tema',
+  'teal_theme': 'Groenblou tema',
+  'english': 'Engels',
+  'french': 'Frans',
+  'amharic': 'Amharies',
+  'arabic': 'Arabies',
+  'spanish': 'Spaans',
+  'afrikaans': 'Afrikaans',
+
+  'welcome_to_service_booking': 'Welkom by Diensbespreking',
   'discover_and_book_services':
-      'Ontdek en bespreek wonderlike dienste binne jou bereik.', // Discover and book amazing services at your fingertips.
-  'find_perfect_service': 'Vind die perfekte diens', // Find the Perfect Service
+      'Ontdek en bespreek wonderlike dienste binne jou bereik.',
+  'find_perfect_service': 'Vind die perfekte diens',
   'browse_variety_of_services':
-      'Blaai deur \'n verskeidenheid dienste en vind wat jy nodig het.', // Browse through a wide variety of services and find what you need.
-  'choose_your_language': 'Kies jou taal', // Choose Your Language
-  'select_preferred_language':
-      'Kies jou voorkeurtaal om te begin.', // Select your preferred language to get started.
-  'select_language': 'Kies taal', // Select Language
-  'skip': 'Slaan oor', // Skip
-  // Login
-  'welcome_back': 'Welkom terug', // Welcome Back
-  'login_to_continue':
-      'Meld aan om voort te gaan met die gebruik van die app.', // Login to continue using the app.
-  'email': 'E-pos', // Email
-  'enter_your_email': 'Voer jou e-posadres in', // Enter your email
-  'password': 'Wagwoord', // Password
-  'enter_your_password': 'Voer jou wagwoord in', // Enter your password
-  'remember_me': 'Onthou my', // Remember Me
-  'forgot_password': 'Wagwoord vergeet?', // Forgot Password?
-  'login': 'Meld aan', // Login
-  'or_sign_in_with': 'Of meld aan met', // Or sign in with
-  'dont_have_account': 'Het u nie \'n rekening nie?', // Don\'t have account?
-  'sign_up': 'Registreer', // Sign Up
-  'please_enter_email':
-      'Voer asseblief jou e-posadres in', // Please enter your email
-  'please_enter_valid_email':
-      'Voer asseblief \'n geldige e-posadres in', // Please enter a valid email
-  'please_enter_password':
-      'Voer asseblief jou wagwoord in', // Please enter your password
-  'password_too_short':
-      'Wagwoord moet minstens 6 karakters lank wees', // Password must be at least 6 characters long
-  'login_successful': 'Aanmelding suksesvol!', // Login successful!
+      'Blaai deur \'n verskeidenheid dienste en vind wat jy nodig het.',
+  'choose_your_language': 'Kies jou taal',
+  'select_preferred_language': 'Kies jou voorkeurtaal om te begin.',
+  'select_language': 'Kies taal',
+  'skip': 'Slaan oor',
+  //! Login
+  'welcome_back': 'Welkom terug',
+  'login_to_continue': 'Meld aan om voort te gaan met die gebruik van die app.',
+  'email': 'E-pos',
+  'enter_your_email': 'Voer jou e-posadres in',
+  'password': 'Wagwoord',
+  'enter_your_password': 'Voer jou wagwoord in',
+  'remember_me': 'Onthou my',
+  'forgot_password': 'Wagwoord vergeet?',
+  'login': 'Meld aan',
+  'or_sign_in_with': 'Of meld aan met',
+  'dont_have_account': 'Het u nie \'n rekening nie?',
+  'sign_up': 'Registreer',
+  'please_enter_email': 'Voer asseblief jou e-posadres in',
+  'please_enter_valid_email': 'Voer asseblief \'n geldige e-posadres in',
+  'please_enter_password': 'Voer asseblief jou wagwoord in',
+  'password_too_short': 'Wagwoord moet minstens 6 karakters lank wees',
+  'login_successful': 'Aanmelding suksesvol!',
   'forgot_password_not_implemented':
-      'Wagwoord vergeet funksionaliteit is nog nie geïmplementeer nie.', // Forgot password functionality is not implemented yet.
+      'Wagwoord vergeet funksionaliteit is nog nie geïmplementeer nie.',
   'register_not_implemented':
-      'Registrasie funksionaliteit is nog nie geïmplementeer nie.', // Register functionality is not implemented yet.
+      'Registrasie funksionaliteit is nog nie geïmplementeer nie.',
   'login_not_implemented':
-      'Aanmelding funksionaliteit is nog nie geïmplementeer nie.', // login functionality is not implemented yet.
+      'Aanmelding funksionaliteit is nog nie geïmplementeer nie.',
+  'confirm_logout': 'Bevestig uitlog',
+  'are_you_sure_logout': 'Is jy seker jy wil uitlog?',
+  'logout': 'Log uit',
+  'home': 'Tuis',
+  'service_booking_app': 'Diensbesprekingsprogram',
+
+  //! filter
+  'close': 'Sluit',
+  'show_only_available': 'Wys slegs beskikbare dienste',
+
+  //! categories
+  'All': 'Alles',
+  'Cleaning': 'Skoonmaak',
+  'Repair': 'Herstel',
+  'Gardening': 'Tuinmaak',
+  'Beauty': 'Skoonheid',
+  'Education': 'Onderwys',
+  'Automotive': 'Motorkar',
+  'Other': 'Ander',
+
+  'check_internet_connection':
+      'Kontroleer asseblief jou internetverbinding en probeer weer.',
+  'generic_service_description_body_short':
+      'Ervaar topgehalte diens van betroubare professionele.\nOns bied effektiewe oplossings aangepas by jou behoeftes, wat tevredenheid verseker.\nBespreek met vertroue vir \'n naatlose ervaring.',
+  'professional_service_included': 'Professionele diens deur ervare personeel',
+  'quality_equipment_included': 'Kwaliteit toerusting en materiale',
+  'satisfaction_guarantee_included': 'Tevredenheidsgarantie',
+  'free_follow_up_included': 'Gratis opvolg konsultasie',
+  'currency_symbol': 'R',
+  'generic_service_description_body_full':
+      'Ervaar topgehalte diens wat deur betroubare professionele gelewer word. Ons dienste is ontwerp om doeltreffende oplossings te bied wat aangepas is by jou behoeftes, om jou volledige tevredenheid te verseker. Ons prioritiseer kwaliteit, betroubaarheid en \'n naatlose besprekingservaring van begin tot einde.',
 };

@@ -45,14 +45,48 @@ flutter run
 
 Here are a few screenshots of the application:
 
-![Login Screen](screenshots/screenshot_1.jpg)
-![Service List Screen](screenshots/screenshot_2.jpg)
-![Service Detail Screen](screenshots/screenshot_3.jpg)
-![Add New Service Screen](screenshots/screenshot_4.jpg)
-![Edit Service Screen](screenshots/screenshot_5.jpg)
-![Search Filter Screen](screenshots/screenshot_6.jpg)
-![Settings Screen](screenshots/screenshot_7.jpg)
-![Language Screen](screenshots/screenshot_8.jpg)
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+  <div style="text-align: center;">
+    <img src="screenshots/screenshot_1.jpg" alt="Login Screen" width="250">
+    <br>
+    Login Screen
+  </div>
+  <div style="text-align: center;">
+    <img src="screenshots/screenshot_2.jpg" alt="Service List Screen" width="250">
+    <br>
+    Service List Screen
+  </div>
+  <div style="text-align: center;">
+    <img src="screenshots/screenshot_3.jpg" alt="Service Detail Screen" width="250">
+    <br>
+    Service Detail Screen
+  </div>
+  <div style="text-align: center;">
+    <img src="screenshots/screenshot_4.jpg" alt="Add New Service Screen" width="250">
+    <br>
+    Add New Service Screen
+  </div>
+  <div style="text-align: center;">
+    <img src="screenshots/screenshot_5.jpg" alt="Edit Service Screen" width="250">
+    <br>
+    Edit Service Screen
+  </div>
+  <div style="text-align: center;">
+    <img src="screenshots/screenshot_6.jpg" alt="Search Filter Screen" width="250">
+    <br>
+    Search Filter Screen
+  </div>
+  <div style="text-align: center;">
+    <img src="screenshots/screenshot_7.jpg" alt="Settings Screen" width="250">
+    <br>
+    Settings Screen
+  </div>
+   <div style="text-align: center;">
+    <img src="screenshots/screenshot_8.jpg" alt="Language Screen" width="250">
+    <br>
+    Language Screen
+  </div>
+</div>
 
 ## ✨ Breakdown of Implemented Features
 

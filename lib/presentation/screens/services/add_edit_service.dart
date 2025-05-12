@@ -52,7 +52,7 @@ class _AddEditServiceScreenState extends State<AddEditServiceScreen> {
     );
 
     if (widget.service != null) {
-      _selectedCategory = widget.service!.category.tr;
+      _selectedCategory = widget.service!.category;
       _availability = widget.service!.availability;
     }
 

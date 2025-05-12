@@ -56,7 +56,7 @@ class DrawerHeaderWidget extends StatelessWidget {
                             ),
                             const SizedBox(height: 4),
                             Text(
-                              'user@example.com',
+                              'user@gmail.com',
                               style: theme.textTheme.bodyMedium?.copyWith(
                                 color: theme.colorScheme.onSurface.withOpacity(
                                   0.7,

@@ -16,21 +16,18 @@ class ServicesController extends GetxController {
   final UpdateService _updateService;
   final DeleteService _deleteService;
 
-  // Loading and error states
   RxBool isLoading = true.obs;
   RxString errorMessage = ''.obs;
 
-  // Services data
   RxList<ServiceEntity> services = <ServiceEntity>[].obs;
+  Rx<ServiceEntity?> currentServiceDetail = Rx<ServiceEntity?>(null);
 
-  // Search and filter states
   RxString searchQuery = ''.obs;
   RxString selectedCategory = 'All'.obs;
   RxDouble minPriceFilter = 0.0.obs;
   RxDouble maxPriceFilter = 1000.0.obs;
   RxBool onlyAvailableFilter = false.obs;
 
-  // Categories list
   final RxList<String> categories =
       <String>[
         'All',
@@ -55,13 +52,6 @@ class ServicesController extends GetxController {
        _updateService = updateService,
        _deleteService = deleteService;
 
-  @override
-  void onInit() {
-    super.onInit();
-    fetchServices();
-  }
-
-  // Apply filters method
   void applyFilters({
     required double minPrice,
     required double maxPrice,
@@ -70,10 +60,9 @@ class ServicesController extends GetxController {
     minPriceFilter.value = minPrice;
     maxPriceFilter.value = maxPrice;
     onlyAvailableFilter.value = onlyAvailable;
-    update(); // Trigger UI update
+    update();
   }
 
-  // Reset all filters
   void resetFilters() {
     searchQuery.value = '';
     selectedCategory.value = 'All';
@@ -83,10 +72,8 @@ class ServicesController extends GetxController {
     update();
   }
 
-  // Computed property for filtered services
   List<ServiceEntity> get filteredServices {
     return services.where((service) {
-      // Filter by search query
       final matchesSearch =
           service.name.toLowerCase().contains(
             searchQuery.value.toLowerCase(),
@@ -95,17 +82,14 @@ class ServicesController extends GetxController {
             searchQuery.value.toLowerCase(),
           );
 
-      // Filter by category
       final matchesCategory =
           selectedCategory.value == 'All' ||
           service.category == selectedCategory.value;
 
-      // Filter by price
       final matchesPrice =
           service.price >= minPriceFilter.value &&
           service.price <= maxPriceFilter.value;
 
-      // Filter by availability
       final matchesAvailability =
           !onlyAvailableFilter.value || service.availability;
 
@@ -183,7 +167,6 @@ class ServicesController extends GetxController {
     failureOrService.fold(
       (failure) {
         errorMessage.value = _mapFailureToMessage(failure);
-
         Get.snackbar(
           'error'.tr,
           errorMessage.value.tr,
@@ -197,6 +180,10 @@ class ServicesController extends GetxController {
         if (index != -1) {
           services[index] = updatedService;
           services.refresh();
+        }
+
+        if (currentServiceDetail.value?.id == updatedService.id) {
+          currentServiceDetail.value = updatedService;
         }
 
         Get.back();
@@ -246,27 +233,42 @@ class ServicesController extends GetxController {
     );
   }
 
-  Future<void> fetchServiceDetail(String id) async {
-    isLoading.value = true;
+  Future<void> fetchServiceDetail(
+    String id, {
+    bool isBackgroundFetch = false,
+  }) async {
+    if (!isBackgroundFetch) {
+      isLoading.value = true;
+    }
     errorMessage.value = '';
+
     final failureOrServiceDetail = await _getServiceDetail(id);
+
     failureOrServiceDetail.fold(
       (failure) {
         errorMessage.value = _mapFailureToMessage(failure);
-        isLoading.value = false;
-        Get.snackbar(
-          animationDuration: const Duration(milliseconds: 500),
-          'error'.tr,
-          errorMessage.value.tr,
-          snackPosition: SnackPosition.BOTTOM,
-          backgroundColor: Get.theme.colorScheme.error,
-          colorText: Get.theme.colorScheme.onError,
-        );
+        if (!isBackgroundFetch) {
+          isLoading.value = false;
+          currentServiceDetail.value = null;
+        }
+
+        if (!isBackgroundFetch || failure is NetworkFailure) {
+          Get.snackbar(
+            animationDuration: const Duration(milliseconds: 500),
+            'error'.tr,
+            errorMessage.value.tr,
+            snackPosition: SnackPosition.BOTTOM,
+            backgroundColor: Get.theme.colorScheme.error,
+            colorText: Get.theme.colorScheme.onError,
+          );
+        }
       },
       (serviceDetail) {
-        isLoading.value = false;
+        if (!isBackgroundFetch) {
+          isLoading.value = false;
+        }
 
-        Get.to(ServiceDetailScreen(service: serviceDetail));
+        currentServiceDetail.value = serviceDetail;
       },
     );
   }

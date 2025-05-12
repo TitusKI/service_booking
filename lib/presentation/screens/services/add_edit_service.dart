@@ -26,7 +26,7 @@ class _AddEditServiceScreenState extends State<AddEditServiceScreen> {
   late final TextEditingController _imageUrlController;
   late final TextEditingController _ratingController;
 
-  String _selectedCategory = 'Cleaning'.tr;
+  String _selectedCategory = 'Cleaning';
   bool _availability = true;
 
   bool _isImageValid = true;
@@ -92,7 +92,7 @@ class _AddEditServiceScreenState extends State<AddEditServiceScreen> {
     });
   }
 
-  void _submitForm() {
+  void _submitForm() async {
     if (_formKey.currentState!.validate()) {
       final service = ServiceEntity(
         id: widget.service?.id ?? const Uuid().v4(),
@@ -106,9 +106,13 @@ class _AddEditServiceScreenState extends State<AddEditServiceScreen> {
       );
 
       if (widget.service == null) {
-        _servicesController.performAddService(service);
+        await _servicesController.performAddService(service);
       } else {
-        _servicesController.performUpdateService(service);
+        await _servicesController.performUpdateService(service);
+      }
+
+      if (context.mounted) {
+        Get.back(result: {'updatedService': service});
       }
     }
   }
@@ -171,11 +175,11 @@ class _AddEditServiceScreenState extends State<AddEditServiceScreen> {
                   ),
                   child: DropdownButtonHideUnderline(
                     child: DropdownButton<String>(
-                      value: _selectedCategory.tr,
+                      value: _selectedCategory,
                       isExpanded: true,
                       items:
                           _servicesController.categories
-                              .where((category) => category.tr != 'All'.tr)
+                              .where((category) => category != 'All')
                               .map((category) {
                                 return DropdownMenuItem<String>(
                                   value: category,
@@ -186,7 +190,7 @@ class _AddEditServiceScreenState extends State<AddEditServiceScreen> {
                       onChanged: (value) {
                         if (value != null) {
                           setState(() {
-                            _selectedCategory = value.tr;
+                            _selectedCategory = value;
                           });
                         }
                       },

@@ -10,7 +10,6 @@ import '../../widgets/loading_indicator.dart';
 import '../../widgets/empty_state.dart';
 import 'add_edit_service.dart';
 import 'service_detail_screen.dart';
-import '../settings/settings_screen.dart';
 
 class ServicesListScreen extends StatefulWidget {
   const ServicesListScreen({super.key});
@@ -25,6 +24,9 @@ class _ServicesListScreenState extends State<ServicesListScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      controller.fetchServices();
+    });
 
     return Scaffold(
       key: _scaffoldKey,
@@ -158,7 +160,11 @@ class _ServicesListScreenState extends State<ServicesListScreen> {
                                 controller.selectedCategory.value != 'All'
                             ? () {
                               controller.searchQuery.value = '';
-                              controller.selectedCategory.value = 'All';
+                              controller.maxPriceFilter.value = 1000;
+                              controller.minPriceFilter.value = 0;
+                              setState(() {
+                                controller.selectedCategory.value = 'All';
+                              });
                             }
                             : null,
                   );
@@ -185,8 +191,9 @@ class _ServicesListScreenState extends State<ServicesListScreen> {
                                 service: service,
                                 onTap:
                                     () => Get.to(
-                                      () =>
-                                          ServiceDetailScreen(service: service),
+                                      () => ServiceDetailScreen(
+                                        initialService: service,
+                                      ),
                                       transition:
                                           Transition.rightToLeftWithFade,
                                     ),

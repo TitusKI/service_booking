@@ -48,7 +48,7 @@ Here are a few screenshots of the application:
 ![Login Screen](screenshots/screenshot_1.jpg)
 ![Service List Screen](screenshots/screenshot_2.jpg)
 ![Service Detail Screen](screenshots/screenshot_3.jpg)
-![Add New Service Screen](screenshots/screenshot_4.jgp)
+![Add New Service Screen](screenshots/screenshot_4.jpg)
 ![Edit Service Screen](screenshots/screenshot_5.jpg)
 ![Search Filter Screen](screenshots/screenshot_6.jpg)
 ![Settings Screen](screenshots/screenshot_7.jpg)

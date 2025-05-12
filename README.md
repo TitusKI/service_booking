@@ -45,9 +45,6 @@ flutter run
 
 Here are a few screenshots of the application:
 
-## 📸 Screenshots or Screen Recordings
-
-Here are some screenshots of the application:
 
 <table>
   <tr>

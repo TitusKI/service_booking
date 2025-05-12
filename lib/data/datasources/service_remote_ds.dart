@@ -21,21 +21,16 @@ class ServiceRemoteDataSourceImpl implements ServiceRemoteDataSource {
   @override
   Future<List<ServiceModelDto>> getAllServices() async {
     try {
-      print('Fetching all services from $baseUrl');
       final response = await dio.get(baseUrl);
       if (response.statusCode == 200) {
         final List<dynamic> jsonList = response.data;
-        print('Response data: $jsonList');
         final List<ServiceModelDto> services =
             jsonList.map((json) => ServiceModelDto.fromJson(json)).toList();
-        print('Parsed services: $services');
-        return jsonList.map((json) => ServiceModelDto.fromJson(json)).toList();
+        return services;
       } else {
         throw ServerException();
       }
     } on DioException catch (e) {
-      print('Error fetching services: ${e.message}');
-
       if (e.type == DioExceptionType.connectionError ||
           e.type == DioExceptionType.receiveTimeout ||
           e.type == DioExceptionType.sendTimeout) {

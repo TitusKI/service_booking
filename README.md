@@ -45,48 +45,60 @@ flutter run
 
 Here are a few screenshots of the application:
 
-<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-  <div style="text-align: center;">
-    <img src="screenshots/screenshot_1.jpg" alt="Login Screen" width="250">
-    <br>
-    Login Screen
-  </div>
-  <div style="text-align: center;">
-    <img src="screenshots/screenshot_2.jpg" alt="Service List Screen" width="250">
-    <br>
-    Service List Screen
-  </div>
-  <div style="text-align: center;">
-    <img src="screenshots/screenshot_3.jpg" alt="Service Detail Screen" width="250">
-    <br>
-    Service Detail Screen
-  </div>
-  <div style="text-align: center;">
-    <img src="screenshots/screenshot_4.jpg" alt="Add New Service Screen" width="250">
-    <br>
-    Add New Service Screen
-  </div>
-  <div style="text-align: center;">
-    <img src="screenshots/screenshot_5.jpg" alt="Edit Service Screen" width="250">
-    <br>
-    Edit Service Screen
-  </div>
-  <div style="text-align: center;">
-    <img src="screenshots/screenshot_6.jpg" alt="Search Filter Screen" width="250">
-    <br>
-    Search Filter Screen
-  </div>
-  <div style="text-align: center;">
-    <img src="screenshots/screenshot_7.jpg" alt="Settings Screen" width="250">
-    <br>
-    Settings Screen
-  </div>
-   <div style="text-align: center;">
-    <img src="screenshots/screenshot_8.jpg" alt="Language Screen" width="250">
-    <br>
-    Language Screen
-  </div>
-</div>
+## 📸 Screenshots or Screen Recordings
+
+Here are some screenshots of the application:
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="screenshots/screenshot_1.jpg" alt="Login Screen" width="250">
+      <br>
+      Login Screen
+    </td>
+    <td align="center">
+      <img src="screenshots/screenshot_2.jpg" alt="Service List Screen" width="250">
+      <br>
+      Service List Screen
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="screenshots/screenshot_3.jpg" alt="Service Detail Screen" width="250">
+      <br>
+      Service Detail Screen
+    </td>
+    <td align="center">
+      <img src="screenshots/screenshot_4.jpg" alt="Add New Service Screen" width="250">
+      <br>
+      Add New Service Screen
+    </td>
+  </tr>
+   <tr>
+    <td align="center">
+      <img src="screenshots/screenshot_5.jpg" alt="Edit Service Screen" width="250">
+      <br>
+      Edit Service Screen
+    </td>
+    <td align="center">
+      <img src="screenshots/screenshot_6.jpg" alt="Search Filter Screen" width="250">
+      <br>
+      Search Filter Screen
+    </td>
+  </tr>
+   <tr>
+    <td align="center">
+      <img src="screenshots/screenshot_7.jpg" alt="Settings Screen" width="250">
+      <br>
+      Settings Screen
+    </td>
+     <td align="center">
+      <img src="screenshots/screenshot_8.jpg" alt="Language Screen" width="250">
+      <br>
+      Language Screen
+    </td>
+  </tr>
+</table>
 
 ## ✨ Breakdown of Implemented Features
 

@@ -106,7 +106,7 @@ These tests are crucial for validating the data layer's ability to handle data t
 
 Here is a screenshot showing the successful execution of these tests:
 
-![Screenshot of ServiceModelDto tests passing](screenshots/test_output.png)
+![Screenshot of ServiceModelDto tests passing](screenshots/test_output.jpg)
 
 To run these tests, navigate to the project root in your terminal and execute:
 

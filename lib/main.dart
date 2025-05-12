@@ -38,30 +38,27 @@ class ServiceBookingApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // Initialize SizeConfig for responsive design
     SizeConfig().init(context);
-
+    final themeController = Get.find<ThemeController>();
     //GetBuilder - updates for the entire MaterialApp
     return GetBuilder<LanguageController>(
       init: Get.find<LanguageController>(),
       builder: (langController) {
-        return GetBuilder<ThemeController>(
-          init: Get.find<ThemeController>(),
-          builder: (themeController) {
-            return GetMaterialApp(
-              title: 'app_name'.tr,
-              debugShowCheckedModeBanner: false,
-              theme: _updateFonts(
-                AppThemes.getThemeData(themeController.themeType.value),
-              ),
-              locale: langController.locale,
-              fallbackLocale: const Locale('en', 'US'),
-              translations: AppTranslations(),
-              defaultTransition: Transition.cupertino,
-              transitionDuration: const Duration(milliseconds: 300),
-              initialBinding: AppBinding(),
-              home: _getInitialScreen(Get.find<StorageService>()),
-            );
-          },
-        );
+        return Obx(() {
+          return GetMaterialApp(
+            title: 'app_name'.tr,
+            debugShowCheckedModeBanner: false,
+            theme: _updateFonts(
+              AppThemes.getThemeData(themeController.themeType.value),
+            ),
+            locale: langController.locale,
+            fallbackLocale: const Locale('en', 'US'),
+            translations: AppTranslations(),
+            defaultTransition: Transition.cupertino,
+            transitionDuration: const Duration(milliseconds: 300),
+            initialBinding: AppBinding(),
+            home: _getInitialScreen(Get.find<StorageService>()),
+          );
+        });
       },
     );
   }
